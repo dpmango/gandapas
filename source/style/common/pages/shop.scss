@@ -81,10 +81,11 @@ section{
 	font-size: rem(20px);
 	color: $text-blue;
 	border-bottom: 1px dashed $blue;
+	transition: all $transitionSpeed $ease;
 	&:hover{
 		@include Ubuntu(medium)
 		color: $orange;
-		border-bottom: none;
+		border-color: transparent;
 		text-decoration: none;
 	}
 }

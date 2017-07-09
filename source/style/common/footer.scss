@@ -78,6 +78,7 @@
 .appstore__wrap{
 	display: flex;
 	align-items: center;
+	transition: all $transitionSpeed $ease;
 	&:hover{
 		color: $white;
 	}
@@ -135,6 +136,10 @@
 		width: 350px;
 		color: $white;
 		background-color: rgba($grey, .2);
+		transition: all $transitionSpeed $ease;
+		&:focus{
+			outline: 2px solid $orange;
+		}
 		@include laptops(){
 			width: 100%;
 		}
@@ -170,5 +175,5 @@
 	p{
 		margin: 0;
 	}
-	
+
 }
