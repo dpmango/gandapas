@@ -184,6 +184,7 @@ button,a{
 		border: 1px solid $text-blue;
 		border-radius: 15px 15px 15px 0;
 		color: $white;
+		transition: all $transitionSpeed $ease;
 		.fa{
 			margin-left: 5px;
 			margin-top: 3px;
