@@ -24,7 +24,7 @@ $(document).on('ready', function(){
 		})
 		toggleActive(user, userMnu);
 		toggleActive(blogMnu, $('.blog__main-right'), blogMnu);
-		toggleActive(closeBtn, $('.header'), $('.main__info-top'));
+		toggleActive(closeBtn, $('.header'));
 
 		function toggleActive(elem, block, block2){
 			elem.on('click', function(e){

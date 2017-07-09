@@ -50,17 +50,23 @@
 	@include box-shadow(0px 0px 50px 3px $black);
 }
 .header{
-	display: none;
-	padding: 5px;
+	padding: 8px 5px;
 	background-color: $black;
+	transform: translate3d(0,-100%,0);
+	transition: transform $transitionSpeed $ease;
 	@include tablets(){
 		display: none;
 	}
 	&.active{
-		display: block;
+		transform: translate3d(0,0,0);
 		@include tablets(){
 			display: none;
 		}
+	}
+	&__right{
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
 	}
 }
 .points__list{
@@ -68,13 +74,16 @@
 	display: flex;
 }
 .points__item{
+	flex: 0 0 auto;
+	@include Ubuntu(light);
 	position: relative;
 	padding-right: 15px;
-	min-width: 75px;
+	transition: color $transitionSpeed $ease;
+	&:hover{
+		color: $orange;
+	}
 	a{
-		@include Ubuntu(light);
 		font-size: rem(16px);
-		color: $text-grey;
 	}
 	&:after{
 		content: "/";
@@ -84,18 +93,14 @@
 		color: $text-grey;
 		transform: translateY(-50%);
 	}
-	&:first-child{
-		min-width: 93px;
-	}
 	&.active{
-		display: flex;
-		max-width: 410px;
+		max-width: 450px;
 		overflow: hidden;
 		a{
+			white-space: nowrap;
+			overflow: hidden;
+			display: inline-block;
 			@include Ubuntu(bold);
-			font-size: rem(16px);
-			min-width: 700px;
-			color: $white;
 		}
 		&:after{
 			display: none;
@@ -103,20 +108,36 @@
 	}
 }
 .registration{
+	margin-left: 35px;
 	color: $text-red;
 	transition: all $transitionSpeed $ease;
+	background: black;
 	&:hover{
-		color: $text-red;
+		color: $orange;
+	}
+	&:before{
+		display: block;
+		position: absolute;
+		top: 0;
+		content: ' ';
+		width: 50px;
+		height: 20px;
+		left: 0px;
+		background: linear-gradient(to right, rgba( black, 0 ), rgba(black, .99));
 	}
 }
 .close__link{
-	color: $grey;
 	transition: all $transitionSpeed $ease;
+	margin-right: 40px;
+	font-size: 13px;
+	@include desktops(){
+		margin-right: 10px;
+	}
 	.fa{
 		margin-right: 5px;
 	}
 	span{
-		border-bottom: 1px dashed $grey;
+		border-bottom: 1px dotted $grey;
 		transition: all $transitionSpeed $ease;
 	}
 	&:hover{
@@ -143,11 +164,6 @@
 		@include phones(){
 			padding: 0 30px;
 		}
-	}
-}
-.main__info-top{
-	&.active{
-		padding-top: 30px;
 	}
 }
 .info__middle-left{
