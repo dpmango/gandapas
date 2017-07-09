@@ -1,5 +1,4 @@
 $(document).on('ready', function(){
-
 	//Скрипты для элементов которые скрываются или появляются при клике
 	(function(){
 		var closeBtn = $('.close__link'),
@@ -30,7 +29,7 @@ $(document).on('ready', function(){
 		function toggleActive(elem, block, block2){
 			elem.on('click', function(e){
 				e.preventDefault();
-				
+
 				if(block){
 					block.toggleClass('active');
 				}
@@ -68,7 +67,7 @@ $(document).on('ready', function(){
 			}else{
 				item.removeClass('active');
 			}
-		})		
+		})
 	}());
 
 	//Подключение слайдера
@@ -127,7 +126,7 @@ $(document).on('ready', function(){
 			var shopList = $('.shop__list'),
 					facts = $('.map__list');
 
-			addSlider(facts);		
+			addSlider(facts);
 			addSlider(shopList);
 		}
 		function addSlider(item){

@@ -52,8 +52,9 @@ ul {
 
 a {
 	text-decoration: none;
+	transition: all .25s ease-in-out;
 	&:hover{
-		transition: .3s;
+		color: inherit;
 	}
 }
 
@@ -70,7 +71,6 @@ h5,
 h6 {
 	@include Ubuntu(bold);
 	margin-top: 0;
-	font-weight: normal;
 	color: $black;
 }
 

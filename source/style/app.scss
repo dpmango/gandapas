@@ -14,6 +14,9 @@ $text-blue: #0084ff;
 $text-green: #1ac508;
 $text-grey: #cccccc;
 
+$transitionSpeed: .25s;
+$ease: ease-in-out;
+
 
 // layout
 @import "common/_font";
