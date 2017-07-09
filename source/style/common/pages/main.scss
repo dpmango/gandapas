@@ -184,6 +184,8 @@
 	align-items: center;
 	justify-content: space-between;
 	padding-top: 7px;
+	padding-right: 30px;
+	color: white;
 	@include tablets(){
 		display: none;
 	}
@@ -193,9 +195,9 @@
 	display: flex;
 	align-items: center;
 	font-size: rem(15px);
-	color: $text-grey;
 	transition: all $transitionSpeed $ease;
-	a{
+	a:not(.non-hoverable){
+		line-height: 1.2;
 		@include hover($white, none);
 		margin-left: 5px;
 	}
@@ -207,10 +209,10 @@
 		padding-top: 15px;
 	}
 	h1{
-		font-size: rem(75px);
+		font-size: rem(82px);
 		text-align: center;
 		color: $white;
-		letter-spacing: 5px;
+		letter-spacing: 0px;
 		text-transform: uppercase;
 		@include laptops(){
 			font-size: rem(60px);
@@ -242,7 +244,7 @@
 
 .mnu{
 	padding-top: 10px;
-	margin-bottom: 40px;
+	margin-bottom: 30px;
 	@include laptops(){
 		margin-bottom: 15px;
 	}
@@ -293,6 +295,7 @@
 	justify-content: space-around;
 	padding: 0 10px;
 	border: 2px solid $white;
+	background: rgba(white, .1);
 	border-radius: 10px 10px 10px 0;
 	@include tablets(){
 		flex-direction: column;
@@ -301,9 +304,12 @@
 	}
 }
 .mnu__item{
-	padding: 5px 0;
+	@include Ubuntu(light);
+	padding: 10px 0;
+	line-height: 1;
 	margin-top: -2px;
 	margin-bottom: -2px;
+	font-size: 19px;
 	border-top: 2px solid transparent;
 	border-bottom: 2px solid transparent;
 	transition: border $transitionSpeed $ease;
@@ -335,10 +341,12 @@
 	}
 }
 .motivate__title{
-	font-size: rem(30px);
+	font-family: 'Roboto Condensed', sans-serif;
+	font-weight: 700;
+	font-size: rem(32px);
 	color: $white;
 	text-transform: uppercase;
-	margin-bottom: 25px;
+	margin-bottom: 15px;
 	@include laptops(){
 		width: 50%;
 		margin-bottom: 0;
@@ -358,13 +366,13 @@
 .motivate__descr{
 	@include Ubuntu(light);
 	font-size: rem(15px);
-	color: $text-grey;
 	margin-bottom: 20px;
+	line-height: 1.6;
+	color: white;
 	span{
-		@include Ubuntu(medium);
 		background-color: $orange;
 		color: $black;
-		padding: 0 3px;
+		padding: 2px 5px;
 		margin: 0 3px;
 	}
 	@include laptops(){
@@ -389,8 +397,11 @@
 	}
 }
 .motivate__link{
-	@include hover($white, none);
+	@include hover(rgba(white, .3), none);
 	font-size: rem(15px);
+	&:hover{
+		color: white;
+	}
 }
 .red__banner{
 	display: none;

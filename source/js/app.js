@@ -1,6 +1,6 @@
 $(document).on('ready', function(){
 	// common elements
-	
+
 	// Prevent # behavior
 	$('[href="#"]').click(function(e) {
 		e.preventDefault();
@@ -13,6 +13,17 @@ $(document).on('ready', function(){
             scrollTop: $(el).offset().top}, 1000);
         return false;
 	});
+
+	// SET ACTIVE CLASS IN HEADER
+  // * could be removed in production and server side rendering
+  // user .active for li instead
+  $('.mnu__list li').each(function (i, val) {
+    if ($(val).find('a').attr('href') == window.location.pathname.split('/').pop()) {
+      $(val).addClass('active');
+    } else {
+      $(val).removeClass('active');
+    }
+  });
 
 	//Скрипты для элементов которые скрываются или появляются при клике
 	(function(){
