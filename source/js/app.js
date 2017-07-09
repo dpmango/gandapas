@@ -1,4 +1,19 @@
 $(document).on('ready', function(){
+	// common elements
+	
+	// Prevent # behavior
+	$('[href="#"]').click(function(e) {
+		e.preventDefault();
+	});
+
+	// Smoth scroll
+	$('a[href^="#section"]').click( function() {
+        var el = $(this).attr('href');
+        $('body, html').animate({
+            scrollTop: $(el).offset().top}, 1000);
+        return false;
+	});
+
 	//Скрипты для элементов которые скрываются или появляются при клике
 	(function(){
 		var closeBtn = $('.close__link'),
