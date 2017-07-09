@@ -1,473 +1,217 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <title>Home page</title>
-    <meta content="" name="author">
-    <meta content="" name="description">
-    <meta content="" name="keywords">
-    <meta content="width=device-width, initial-scale=1" name="viewport">
-    <meta content="ie=edge" http-equiv="x-ua-compatible">
-    <link rel="stylesheet" href="/assets/css/foundation.css">
-    <link rel="stylesheet" href="/assets/css/app.css">
-    <script src="/assets/js/foundation.js" defer></script>
-    <script src="/assets/js/app.js" defer></script><!--[if lt IE 9]>
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script><![endif]-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Gandapas</title>
+    <style>
+      *{padding: 0;  margin: 0; -webkit-box-sizing: border-box; box-sizing: border-box;}
+      body{
+      font-family: "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+      font-size: 16px;
+      color: white;
+      min-height: 100vh;
+      height: auto;
+      background-color: #181B1E;
+      overflow-x: hidden;
+      }
+      .container{
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      -webkit-box-align: stretch;
+      -webkit-align-items: stretch;
+      -ms-flex-align: stretch;
+      align-items: stretch;
+      min-height: 400px;
+      height: 100vh;
+      }
+      a{color: inherit; text-decoration: none;}
+      h1{
+      margin: 5vh 3vw 0 3vw;
+      padding-bottom: 1vh;
+      color: white;
+      display: block;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      }
+      .ico{
+      display: inline-block;
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+      content: ' ';
+      font-style: normal;
+      }
+      .ico-status{
+      border-radius: 0;
+      transform: rotate(45deg);
+      width: 6px;
+      height: 6px;
+      margin-right: 5px;
+      vertical-align: 2px;
+      }
+      .ico-status--ready{
+      background: forestgreen;
+      }
+      .ico-status--no{
+      background: tomato;
+      }
+      .ico-status--done{
+      background: black;
+      }
+      .ico-logo{
+      margin: 5vh 3vw 0 3vw;
+      background-image: url(images/el/logo-white@2x.png);
+      width: 207px;
+      height: 65px;
+      }
+      .links{
+      background-color: white;
+      border-radius: 10px;
+      margin: 5vh 2.5%;
+      padding: 5vh 3vw;
+      flex: 0 1 calc(50% - 5%);
+      float: left;
+      color: rgba(0,0,0,.7);
+      }
+      .flex{
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: justify;
+      -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+      justify-content: space-between;
+      max-width: 1280px;
+      margin: 0 auto;
+      }
+      .flexCenter{
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+      -ms-flex-align: center;
+      align-items: center;
+      }
+      .content{
+      -webkit-box-flex: 1;
+      -webkit-flex: 1;
+      -ms-flex: 1;
+      flex: 1;
+      }
+      .flexEnd{
+      -webkit-box-pack: end;
+      -webkit-justify-content: flex-end;
+      -ms-flex-pack: end;
+      justify-content: flex-end;;
+      }
+      ul{list-style: decimal-leading-zero;;}
+      ul li{
+      margin-left: 3vw;
+      color: #838B90;
+      }
+      ul li a{
+      display: -webkit-flex;
+      display: -ms-flex;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      padding: 1.3vh 0vw 1.3vh 1vw;
+      width: 100%;
+      color: #181B1E;
+      border-left: 4px solid transparent;
+      border-bottom: 1px solid rgba(0,0,0,.2);
+      -webkit-transition: all .2s ease-in-out;
+      transition: all .2s ease-in-out;
+      }
+      ul li a span{
+      opacity: .5;
+      margin-left: .5em;
+      text-align: right;
+      }
+      ul li a:hover{
+      border-left: 4px solid #D2A36E;
+      /*background: rgba(0,0,0,.1);*/
+      color: #D2A36E;
+      border-bottom: 1px solid rgba(0,0,0,.4);
+      }
+      h2{
+      margin-bottom: 3vh;
+      }
+      .footer{
+      margin: 5vh 3vw 3vh 3vw;
+      border-top: 1px dotted rgba(255,255,255,.25);
+      padding-top: 2vh;
+      font-size: 0.825em;
+      color: #838B90;
+      }
+      .footer a{
+      color: white;
+      }
+      .flexWrap{
+      -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+      }
+      @media(max-width: 700px){
+      h1{
+      font-size: 1.75em;
+      }
+      .container{
+      display: block;
+      }
+      .links{
+      flex-basis: 100%
+      }
+      ul li {
+      margin-left: 10vw;
+      }
+      }
+    </style>
   </head>
   <body>
-    <div class="wrapper">
-      <div class="bg__pic">
-        <div class="container main__container">
-          <div class="row">
-            <div class="banner__wrap active">
-              <ul class="banners__list">
-                <li class="banner__item"><a href="#"><img src="assets/img/main/banner.png"></a></li>
-                <li class="banner__item"><a href="#"><img src="assets/img/main/banner-2.png"></a></li>
-              </ul>
-            </div>
-            <div class="header active">
-              <div class="container">
-                <div class="header__top row">
-                  <div class="header__left col-md-7 col-sm-6 col-xs-6">
-                    <ul class="points__list">
-                      <li class="points__item"><a class="points__link" href="">19 января</a></li>
-                      <li class="points__item"><a class="points__link" href="">Вебинар</a></li>
-                      <li class="points__item active"><a class="points__link" href="">«Эмоциональный интеллект начинает и выйгрывает»</a></li>
-                    </ul>
-                  </div>
-                  <div class="header__right col-md-5 col-sm-6 col-xs-6">
-                    <div class="row"><a class="registration col-md-8 col-sm-8" href="">Записаться прямо сейчас</a><a class="close__link col-md-4 col-sm-4" href=""><i class="fa fa-close"></i><span>скрыть</span></a></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="main__info-top">
-              <div class="container">
-                <div class="row">
-                  <div class="container">
-                    <div class="col-md-3"></div>
-                    <ul class="info__top-list col-md-9">
-                      <li class="info__top-item">Звоните +7 (495) 1808-04-14</li>
-                      <li class="info__top-item">Пишите: <a href="">mail@radislavgandapas.com</a></li>
-                      <li class="info__top-item"><img src="assets/img/icons/user.png"><a href="">Личный кабинет</a></li>
-                      <li class="info__top-item"><img src="assets/img/icons/flag-icon.png"><a href="">Eng</a></li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="title row">
-                  <h1 class="col-md-12">Радислав Гандапас</h1>
-                </div>
-                <div class="main__info-middle row"><a class="mnu__for-mobile" href="#"><i class="fa fa-bars"></i></a>
-                  <div class="container">
-                    <div class="info__middle-left"></div>
-                    <div class="info__middle-right">
-                      <nav class="mnu row">
-                        <div class="close__btn-wrap">
-                          <div class="change__language"><img src="assets/img/icons/flag-icon.png"><a href="">Eng</a></div><a class="close__btn" href=""><i class="fa fa-close"></i></a>
-                        </div>
-                        <ul class="mnu__list">
-                          <li class="mnu__item active"><a class="mnu__link" href="">Главная</a></li>
-                          <li class="mnu__item"><a class="mnu__link" href="">Тренинги</a></li>
-                          <li class="mnu__item"><a class="mnu__link" href="">Магазин</a></li>
-                          <li class="mnu__item"><a class="mnu__link" href="blog.html">Блог</a></li>
-                          <li class="mnu__item"><a class="mnu__link" href="">Пресс-центр</a></li>
-                        </ul>
-                      </nav>
-                      <div class="row adaptive__row adaptive__row">
-                        <h2 class="motivate__title">
-                          <ul class="second__title-list">
-                            <li>Лидерство</li>
-                            <li>Мотивация</li>
-                            <li>Развитие</li>
-                          </ul>
-                        </h2>
-                      </div>
-                      <div class="row adaptive__row">
-                        <div class="motivate__descr">
-                          <p>
-                             Радислав Гандапас — самый известный в России специалист по лидерству. Автор <span>8 книг </span>и <span>14 фильмов </span>по лидерству и ораторскому искусству. Самый титулованный бизнес-тренер России, единственный в стране трижды был признан лучшим в профессии по результатам года. Лауреат Книжной премии Рунета 2013.</p>
-                        </div>
-                      </div>
-                      <div class="row motivate__link-wrap"><a class="motivate__link" href="">Узнать больше о Радиславе</a></div>
-                      <div class="red__banner">
-                        <h5>Ораторское исскуство 2.0</h5>
-                        <div class="banner__place">Москва / 10-11 декабря</div><a href="#">Узнать больше</a>
-                      </div>
-                      <div class="row adaptive__row">
-                        <h3 class="actions__title">Ближайшие события</h3>
-                      </div>
-                      <div class="row adaptive__row">
-                        <ul class="actions__list col-md-12 col-sm-7">
-                          <li class="actions__item row">
-                            <div class="action__left col-md-2 col-sm-2 col-xs-3">
-                              <div class="date">12.01</div>
-                            </div>
-                            <div class="action__right col-md-10 col-sm-10 col-xs-9"><a class="action__link" href="">Тренинг «Ораторское исскуство 2.0»</a></div>
-                          </li>
-                          <li class="actions__item row">
-                            <div class="action__left col-md-2 col-sm-2 col-xs-3">
-                              <div class="date">31.01<span>01.02</span></div>
-                            </div>
-                            <div class="action__right col-md-10 col-sm-10 col-xs-9"><a class="action__link" href="">Тренинг «Ораторское исскуство 2.0 VIP-день»</a>
-                              <div class="action__descr">
-                                <p>Все это вы не только услышите от тренера, но и сможете закрепить в упражнениях. Мы не будем совместно обсуждать выступление одного участника, как это делается на других тренингах, а будем выступать и выступать. Главный принцип тренинга – удовольствие и польза.</p>
-                              </div>
-                            </div>
-                          </li>
-                          <li class="actions__item row">
-                            <div class="action__left col-md-2 col-sm-2 col-xs-3">
-                              <div class="date">13.02</div>
-                            </div>
-                            <div class="action__right col-md-10 col-sm-10 col-xs-9"><a class="action__link" href="">Радислав выступит на форуме REFORUM с темой «Лидерство и мудрость»</a></div>
-                          </li>
-                          <li class="actions__item row new">
-                            <div class="action__left col-md-2 col-sm-2 col-xs-3">
-                              <div class="date">21.03</div>
-                            </div>
-                            <div class="action__right col-md-10 col-sm-10 col-xs-9"><a class="action__link" href="">Тренинг «Крест лидера»</a>
-                              <div class="action__descr">
-                                <p>Все это вы не только услышите от тренера, но и сможете закрепить в упражнениях. Мы не будем совместно обсуждать выступление одного участника, как это делается на других тренингах, а будем выступать и выступать. Главный принцип тренинга – удовольствие и польза.</p>
-                              </div>
-                            </div>
-                          </li>
-                          <li class="actions__item row">
-                            <div class="action__left col-md-2 col-sm-2 col-xs-3">
-                              <div class="date">27.03</div>
-                            </div>
-                            <div class="action__right col-md-10 col-sm-10 col-xs-9"><a class="action__link" href="">Тренинг «Скрипты и алгоритмы успеха VIP-день»</a></div>
-                          </li>
-                        </ul>
-                      </div>
-                      <div class="red__banner">
-                        <h5>Ораторское исскуство 2.0</h5>
-                        <div class="banner__place">Москва / 10-11 декабря</div><a href="#">Узнать больше</a>
-                      </div>
-                      <div class="row adaptive__row">
-                        <div class="info__banner">
-                          <div class="info__banner-left">
-                            <h3>Ораторское исскуство 2.0</h3>
-                            <div class="place">Москва / 10-11 декабря</div>
-                          </div>
-                          <div class="info__banner-right"><a href="">Узнать больше</a></div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <section class="map">
-              <div class="container">
-                <h2>Факты о Радиславе</h2>
-              </div>
-              <div class="map__container">
-                <div class="container">
-                  <ul class="map__list row">
-                    <li class="map__item col-md-4"></li>
-                    <li class="map__item col-md-4 col-sm-4 col-xs-4">
-                      <h3 class="map__title">4 000 000 км</h3>
-                      <div class="map__descr">
-                        <p>преодолено Радиславом на </p>
-                        <p>самолете/поезде/автомобиле </p>
-                        <p>ради встречи с участниками </p>
-                        <p>тренингов и семинаров.</p>
-                      </div>
-                    </li>
-                    <li class="map__item col-md-3 col-sm-4 col-xs-4 text-right">
-                      <h3 class="map__title">110 000</h3>
-                      <div class="map__descr">
-                        <p>человек приняли</p>
-                        <p>участие в тренингах</p>
-                      </div>
-                    </li>
-                    <li class="map__item col-md-3"></li>
-                    <li class="map__item col-md-3 col-sm-4 col-xs-4">
-                      <h3 class="map__title">6 000 человек -</h3>
-                      <div class="map__descr">
-                        <p>рекордное количество</p>
-                        <p>участников тренинга</p>
-                      </div>
-                    </li>
-                    <li class="map__item col-md-3 col-sm-4 col-xs-4">
-                      <div class="map__descr">
-                        <p>С 1996 года проведено</p>
-                      </div>
-                      <h3 class="map__title"> 1200 тренингов</h3>
-                    </li>
-                    <li class="map__item col-md-3 col-sm-4 col-xs-4">
-                      <h3 class="map__title">43%</h3>
-                      <div class="map__descr">
-                        <p>корпоративных клиентов</p>
-                        <p>- постоянные клиенты</p>
-                      </div>
-                    </li>
-                    <li class="map__item col-md-3 col-sm-4 col-xs-4">
-                      <h3 class="map__title">3600 -</h3>
-                      <div class="map__descr">
-                        <p>суммарное количество</p>
-                        <p>страниц в книгах</p>
-                        <p>Радислава</p>
-                      </div>
-                    </li>
-                    <li class="map__item col-md-3 col-sm-4 col-xs-4">
-                      <h3 class="map__title">2 раза</h3>
-                      <div class="map__descr">
-                        <p>Радислав сам играл</p>
-                        <p>на тренингах на барабанах</p>
-                        <p>во время выступления</p>
-                        <p>в Москве и в Баку</p>
-                      </div>
-                    </li>
-                    <li class="map__item col-md-3 col-sm-4 col-xs-4">
-                      <h3 class="map__title">3000 л. воды</h3>
-                      <div class="map__descr">
-                        <p>выпито Радиславом</p>
-                        <p>во время проведения</p>
-                        <p>тренингов</p>
-                      </div>
-                    </li>
-                    <li class="map__item col-md-3 col-sm-4 col-xs-4">
-                      <div class="map__descr">
-                        <p>За прошедший год</p>
-                        <p>записано</p>
-                      </div>
-                      <h3 class="map__title">240 интервью</h3>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </section>
-            <section class="shop">
-              <div class="container">
-                <h2>Интернет Магазин</h2>
-                <div class="shop__list-wrap">
-                  <div class="shop__list-container">
-                    <div class="shop__title-wrap">
-                      <h4>Видеокурсы</h4>
-                    </div>
-                    <ul class="shop__list">
-                      <li class="shop__item action"><a class="shop__link" href="">
-                          <div class="shop__pic"><img src="assets/img/shop/picture-1.png"></div>
-                          <div class="front__shadow"></div>
-                          <div class="play__btn"><i class="fa fa-play"></i><span>Смотреть фрагмент</span></div>
-                          <div class="shop__info-container">
-                            <div class="shop__info-left">
-                              <div class="info__type">Видео</div>
-                              <div class="info__title">Идеология лидера</div>
-                            </div>
-                            <div class="shop__info-right">
-                              <div class="price">17900 <i class="fa fa-rub"></i><span class="old__price">17900 <i class="fa fa-rub"></i></span></div>
-                            </div>
-                          </div>
-                          <div class="buy__tonque">
-                            <h4>Купить видеокурс</h4>
-                          </div></a></li>
-                      <li class="shop__item hit"><a class="shop__link" href="">
-                          <div class="shop__pic"><img src="assets/img/shop/picture-3.png"></div>
-                          <div class="front__shadow"></div>
-                          <div class="play__btn"><i class="fa fa-play"></i><span>Смотреть фрагмент</span></div>
-                          <div class="shop__info-container">
-                            <div class="shop__info-left">
-                              <div class="info__type">Видео</div>
-                              <div class="info__title">Идеология лидера</div>
-                            </div>
-                            <div class="shop__info-right">
-                              <div class="price">17900 <i class="fa fa-rub"></i><span class="old__price">17900 <i class="fa fa-rub"></i></span></div>
-                            </div>
-                          </div>
-                          <div class="buy__tonque">
-                            <h4>Купить видеокурс</h4>
-                          </div></a></li>
-                    </ul>
-                    <div class="more__link-wrap"><a class="shop__more-link" href="">Еще 9 видеороликов</a></div>
-                  </div>
-                  <div class="shop__list-container">
-                    <div class="shop__title-wrap">
-                      <h4>Книги</h4>
-                    </div>
-                    <ul class="shop__list">
-                      <li class="shop__item new another__btn"><a class="shop__link" href="">
-                          <div class="shop__pic"><img src="assets/img/shop/picture-5.png"></div>
-                          <div class="front__shadow"></div>
-                          <div class="play__btn"><img src="assets/img/icons/book-icon.png"></div>
-                          <div class="shop__info-container">
-                            <div class="shop__info-left">
-                              <div class="info__type">Видео</div>
-                              <div class="info__title">Идеология лидера</div>
-                            </div>
-                            <div class="shop__info-right">
-                              <div class="price">17900 <i class="fa fa-rub"></i><span class="old__price">17900 <i class="fa fa-rub"></i></span></div>
-                            </div>
-                          </div>
-                          <div class="buy__tonque">
-                            <h4>Купить видеокурс</h4>
-                          </div></a></li>
-                      <li class="shop__item womens__day another__btn"><a class="shop__link" href="">
-                          <div class="shop__pic"><img src="assets/img/shop/picture-2.png"></div>
-                          <div class="front__shadow"></div>
-                          <div class="play__btn"><img src="assets/img/icons/book-icon.png"></div>
-                          <div class="shop__info-container">
-                            <div class="shop__info-left">
-                              <div class="info__type">Видео</div>
-                              <div class="info__title">Идеология лидера</div>
-                            </div>
-                            <div class="shop__info-right">
-                              <div class="price">17900 <i class="fa fa-rub"></i><span class="old__price">17900 <i class="fa fa-rub"></i></span></div>
-                            </div>
-                          </div>
-                          <div class="buy__tonque">
-                            <h4>Купить видеокурс</h4>
-                          </div></a></li>
-                    </ul>
-                    <div class="more__link-wrap"><a class="shop__more-link" href="">Еще 3 книги</a></div>
-                  </div>
-                  <div class="shop__list-container">
-                    <div class="shop__title-wrap">
-                      <h4>Аудиокниги</h4>
-                    </div>
-                    <ul class="shop__list">
-                      <li class="shop__item mans__day another__btn"><a class="shop__link" href="">
-                          <div class="shop__pic"><img src="assets/img/shop/picture-4.png"></div>
-                          <div class="front__shadow"></div>
-                          <div class="play__btn"><img src="assets/img/icons/audio-icon.png"></div>
-                          <div class="shop__info-container">
-                            <div class="shop__info-left">
-                              <div class="info__type">Видео</div>
-                              <div class="info__title">Идеология лидера</div>
-                            </div>
-                            <div class="shop__info-right">
-                              <div class="price">17900 <i class="fa fa-rub"></i><span class="old__price">17900 <i class="fa fa-rub"></i></span></div>
-                            </div>
-                          </div>
-                          <div class="buy__tonque">
-                            <h4>Купить видеокурс</h4>
-                          </div></a></li>
-                      <li class="shop__item half__price another__btn"><a class="shop__link" href="">
-                          <div class="shop__pic"><img src="assets/img/shop/picture-6.png"></div>
-                          <div class="front__shadow"></div>
-                          <div class="play__btn"><img src="assets/img/icons/audio-icon.png"></div>
-                          <div class="shop__info-container">
-                            <div class="shop__info-left">
-                              <div class="info__type">Видео</div>
-                              <div class="info__title">Идеология лидера</div>
-                            </div>
-                            <div class="shop__info-right">
-                              <div class="price">17900 <i class="fa fa-rub"></i><span class="old__price">17900 <i class="fa fa-rub"></i></span></div>
-                            </div>
-                          </div>
-                          <div class="buy__tonque">
-                            <h4>Купить видеокурс</h4>
-                          </div></a></li>
-                    </ul>
-                    <div class="more__link-wrap"><a class="shop__more-link" href="">Еще 4 аудио</a></div>
-                  </div>
-                </div>
-              </div>
-            </section>
-            <section class="blog">
-              <div class="container">
-                <h2>Новое в блоге</h2>
-                <ul class="blog__list row">
-                  <li class="blog__item col-md-4 col-sm-6 col-xs-12"><a class="blog__link" href="">
-                      <div class="blog__pic"><img src="assets/img/blog/picture-1.png"></div>
-                      <div class="play__btn"><i class="fa fa-play"></i><span>Смотреть фрагмент</span></div>
-                      <div class="blog__descr">
-                        <p>Не нужно ждать вдохновения, </p>
-                        <p>нужно встать и делать</p>
-                      </div></a></li>
-                  <li class="blog__item col-md-4 col-sm-6 col-xs-12"><a class="blog__link" href="">
-                      <div class="blog__pic"><img src="assets/img/blog/picture-2.png"></div>
-                      <div class="play__btn"><i class="fa fa-play"></i><span>Смотреть фрагмент</span></div>
-                      <div class="blog__descr">
-                        <p>Тренинг “Полная Ж. Полноценная жизнь как главный бизнес-проект человека” в Москве. Как это было</p>
-                      </div></a></li>
-                  <li class="blog__item col-md-4"><a class="blog__link" href="">
-                      <div class="blog__pic full__width"><img src="assets/img/blog/picture-3.png"></div>
-                      <div class="play__btn"><i class="fa fa-play"></i><span>Смотреть фрагмент</span></div>
-                      <div class="blog__descr">
-                        <p>Не нужно ждать вдохновения, </p>
-                        <p>нужно встать и делать</p>
-                      </div></a></li>
-                </ul>
-              </div>
-            </section>
-          </div>
+    <div class="container">
+      <div class="fix">
+        <div class="flex flexCenter">
+          <h1>Gandapas - (html/css)</h1><i class="ico ico-logo"></i>
         </div>
       </div>
-      <footer class="footer">
-        <div class="container">
-          <div class="footer__wrap">
-            <div class="row footer__first-row">
-              <div class="col-md-4 col-sm-10 col-xs-12">
-                <h5>Подписаться на рассылку</h5>
-                <div class="follow__descr">
-                  <p>Материалы по лидерству, ораторскому искусству и личному развитию</p>
-                </div>
-              </div>
-              <div class="socials__wrap col-md-8 col-sm-10 col-xs-12">
-                <div class="row">
-                  <ul class="socials__list col-md-6 col-sm-6 col-xs-12">
-                    <li class="social__item"><a class="social__link" href=""><i class="fa fa-vk"></i></a></li>
-                    <li class="social__item"><a class="social__link" href=""><i class="fa fa-facebook"></i></a></li>
-                    <li class="social__item"><a class="social__link" href=""><i class="fa fa-twitter"></i></a></li>
-                    <li class="social__item"><a class="social__link" href=""><i class="fa fa-instagram"></i></a></li>
-                    <li class="social__item"><a class="social__link" href=""><i class="fa fa-youtube-play"></i></a></li>
-                    <li class="social__item"><a class="social__link" href=""><i class="fa fa-linkedin"></i></a></li>
-                    <li class="social__item"><a class="social__link" href=""><i class="fa fa-vimeo"></i></a></li>
-                    <li class="social__item"><a class="social__link" href=""><i class="fa fa-odnoklassniki"></i></a></li>
-                    <li class="social__item"><a class="social__link" href=""><i class="fa fa-paper-plane"></i></a></li>
-                  </ul>
-                  <div class="col-md-6 col-sm-6 col-xs-12"><a class="appstore__wrap" href=""><img src="assets/img/icons/apple-icon.png">
-                      <div class="appstore__descr">
-                        <p>Учебные фильмы </p>
-                        <p>и аудиокниги</p>
-                      </div></a></div>
-                </div>
-              </div>
-            </div>
-            <form class="footer__form row">
-              <div class="col-md-6 col-sm-6 col-xs-12 email__input">
-                <div class="input__wrap">
-                  <input type="email" placeholder="Ваш email">
-                  <button type="submit">Подписаться</button>
-                </div>
-              </div>
-              <div class="col-md-6 col-xs-12 search__input">
-                <div class="input__wrap">
-                  <input type="email" placeholder="Поиск по сайту">
-                  <button type="submit"><i class="fa fa-search"></i>Найти</button>
-                </div>
-              </div>
-            </form>
-            <ul class="footer__bottom">
-              <li><img src="assets/img/icons/ra-icon.png"></li>
-              <li>
-                <div class="footer__info">
-                  <p>Агенство интеллектуальных</p>
-                  <p>событий «РА»</p>
-                </div>
-              </li>
-              <li>
-                <div class="footer__info">
-                  <p>Звоните: </p>
-                  <p>+7 (495) 180-04-14  </p>
-                </div>
-              </li>
-              <li>
-                <div class="footer__info">
-                  <p>Пишите: </p><span>mail@radislavgandapas.com </span>
-                </div>
-              </li>
-              <li>
-                <div class="footer__info">
-                  <p>Приходите:</p>
-                  <p>Москва, ул.Солянка, 1/2, подъезд 6, офис 41.</p>
-                </div>
-              </li>
+      <div class="content">
+        <div class="flex flexWrap">
+          <div class="links">
+            <h2>Front pages</h2>
+            <ul>
+              <li><a href="home.html" target="_blank">Homepage <span>(Главная)</span></a></li>
+              <li><a href="shop.html" target="_blank">Shop<span>(Магазин)</span></a></li>
+              <li><a href="trainings.html" target="_blank">Trainings<span>(Тренинги)</span></a></li>
+              <li><a href="product.html" target="_blank">Product<span>(Товар)</span></a></li>
+              <li><a href="account.html" target="_blank">Account <span>(Аккаунт)</span></a></li>
+            </ul>
+          </div>
+          <div class="links">
+            <h2>Text pages</h2>
+            <ul>
+              <li><a href="about.html" target="_blank">About <span>(Пресс-центр)</span></a></li>
+              <li><a href="blog.html" target="_blank">Blog <span>(Блог)</span></a></li>
+              <li><a href="post.html" target="_blank">Post<span>(Пост блога)</span></a></li>
+              <li><a href="order.html" target="_blank">Order<span>(Заказ)</span></a></li>
+              <li><a href="ordered.html" target="_blank">Ordered <span>(Все заказы)</span></a></li>
+              <li><a href="tech.html" target="_blank">UI Kit <span>(Компоненты)</span></a></li>
             </ul>
           </div>
         </div>
-      </footer>
+      </div>
+      <div class="fix">
+        <div class="flex flexEnd">
+          <div class="footer">Brought to you by <a href="http://f-end.ru/">@Sergey Khmelevskoy</a></div>
+        </div>
+      </div>
     </div>
   </body>
 </html>
