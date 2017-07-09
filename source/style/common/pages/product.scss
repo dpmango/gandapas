@@ -1,0 +1,219 @@
+/************************************************
+Стили для страницы продукта
+************************************************/
+.product__wrap{
+	background-color: $white;
+	padding: 35px;
+	border-radius: 25px 25px 25px 0;
+	h2{
+		font-size: rem(30px);
+		color: $black;
+		margin-bottom: 25px;
+	}
+	.enter__by{
+		color: $black;
+	}
+	.feedback__list{
+		position: relative;
+		margin-bottom: 25px;
+		padding-bottom: 25px;
+		&:after{
+			content: "";
+			display: block;
+			position: absolute;
+			width: 60%;
+			height: 1px;
+			background-color: $black;
+			bottom: 5px;
+			left: 50%;
+			transform: translateX(-50%);
+		}
+	}
+	.feedback__form{
+		position: relative;
+		margin-bottom: 25px;
+		padding-bottom: 25px;
+		&:after{
+			content: "";
+			display: block;
+			position: absolute;
+			width: 60%;
+			height: 1px;
+			background-color: $black;
+			bottom: -10px;
+			left: 50%;
+			transform: translateX(-50%);
+		}
+		label{
+			color: $black;
+		}
+		.feedback__input-item{
+			width: 48%;
+			@include tablets(){
+				width: 100%;
+			}
+		}
+	}
+	@include tablets(){
+		border-radius: 0;
+	}
+}
+.product__top{
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	margin-bottom: 25px;
+}
+.product__left{
+	width: 50%;
+	h2{
+		display: none;
+		@include tablets(){
+			display: block;
+		}
+	}
+	img{
+		width: 90%;
+	}
+	@include laptops(){
+		width: 40%;
+	}
+	@include tablets(){
+		width: 100%;
+	}
+}
+.product__right{
+	width: 50%;
+	@include laptops(){
+		width: 60%;
+	}
+	@include tablets(){
+		h2{
+			display: none;
+		}
+	}
+	@include tablets(){
+		width: 100%;
+	}
+}
+.product__author{
+	font-size: rem(15px);
+	margin-bottom: 25px;
+	span{
+		@include Ubuntu(medium);
+		margin-left: 5px;
+	}
+}
+.comments__wrap{
+	display: flex;
+	align-items: center;
+	margin-bottom: 25px;
+	.shop__training-comments{
+		@include Ubuntu(medium);
+		margin-right: 30px;
+		margin-top: -2px;
+	}
+}
+.product__descr{
+	font-size: rem(15px);
+	margin-bottom: 25px;
+}
+.product__info{
+	display: flex;
+	margin-bottom: 25px;
+	.shop__training-comments{
+		@include Ubuntu(medium);
+		img{
+			margin-right: 5px;
+		}
+		&:first-child{
+			margin-right: 30px;
+		}
+	}
+}
+.product__title{
+	font-size: rem(25px);
+	text-transform: uppercase;
+	margin-bottom: 25px;
+}
+.format__item{
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 25px;
+	h5{
+		font-size: rem(15px);
+		margin: 0;
+		margin-bottom: 15px;
+	}
+	@include phones(){
+		flex-direction: column;
+		margin-bottom: 25px;
+	}
+}
+.format__left,
+.format__right{
+	width: 50%;
+	@include phones(){
+		width: 100%;
+	}
+}
+.available__versions{
+	@include Ubuntu(light);
+	font-size: rem(15px);
+	span{
+		display: block;
+	}
+}
+.format__right{
+	margin-top: -2px;
+	a{
+		width: 100%;
+		&.grey{
+			background-color: #B5B5B5;
+			border-color: #B5B5B5;
+		}
+	}
+	@include phones(){
+		margin-top: 15px;
+	}
+}
+.econom__price{
+	margin-bottom: 10px;
+}
+.about__book-descr{
+	width: 70%;
+	font-size: rem(15px);
+	margin-bottom: 50px;
+	@include laptops(){
+		width: 100%;
+	}
+}
+.feedback__item{
+	display: flex;
+	margin-bottom: 30px;
+	h4{
+		color: $black;
+	}
+	@include tablets{
+		flex-direction: column;
+	}
+}
+.feedback__left{
+	width: 30%;
+	@include tablets(){
+		width: 100%;
+		margin-bottom: 15px;
+	}
+}
+.feedback__right{
+	@include Ubuntu(light);
+	width: 70%;
+	font-size: rem(15px);
+	@include tablets(){
+		width: 100%;
+	}
+}
+.author__info{
+	@include Ubuntu(light);
+	font-size: rem(13px);
+}

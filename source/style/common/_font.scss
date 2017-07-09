@@ -1,0 +1,69 @@
+@font-face {
+	font-family: 'FontAwesome';
+	src: url('../fonts/fontawesome-webfont.ttf');
+    src: url('../fonts/FontAwesome.otf') format('otf');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Ubuntu';
+	src: url('../fonts/Ubuntu-R.ttf');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Ubuntu-bold';
+	src: url('../fonts/Ubuntu-B.ttf');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Ubuntu-bolditalic';
+	src: url('../fonts/Ubuntu-BI.ttf');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Ubuntu-italic';
+	src: url('../fonts/Ubuntu-RI.ttf');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Ubuntu-light';
+	src: url('../fonts/Ubuntu-L.ttf');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Ubuntu-Medium';
+	src: url('../fonts/Ubuntu-M.ttf');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@mixin Ubuntu($style: regular) {
+	font-family: 'Ubuntu';
+
+	@if $style == bold {
+		font-family: 'Ubuntu-bold';
+	}
+
+	@if $style == light {
+		font-family: 'Ubuntu-light';
+	}
+
+	@if $style == medium {
+		font-family: 'Ubuntu-medium';
+	}
+    
+    @if $style == italic {
+		font-family: 'Ubuntu-italic';
+	}
+}

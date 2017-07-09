@@ -1,0 +1,148 @@
+/********************************************
+Стили для страницы заказов
+*********************************************/
+.ordered__wrap{
+	@include tablets(){
+		overflow-x: scroll;
+	}
+}
+.table__wrap{
+	@include tablets(){
+		width: 800px;
+	}
+}
+.order__container{
+	.mnu{
+		margin-bottom: 0;
+	}
+	.info__top-item{
+		position: relative;
+		&.active{
+			z-index: 300;
+			background-color: $black;
+			padding: 0 15px;
+			padding-top: 15px;
+			margin-top: -15px;
+			.account__mnu{
+				display: flex;
+				flex-direction: column;
+				position: absolute;
+				width: 100%;
+				top: 35px;
+				left: 0px;
+				padding: 15px 0;
+				padding-left: 15px;
+				background-color: $black;
+				border-radius: 0 0 15px 15px;
+				z-index: 200;
+				.account__mnu-item{
+					margin-bottom: 10px;
+				}
+			}
+
+		}
+		span{
+			@include Ubuntu(medium);
+			margin-left: 5px;
+		}
+	}
+	.account__mnu{
+		display: none;
+	}
+	.info__banner{
+		margin-bottom: 145px;
+	}
+	table{
+		width: 100%;
+		margin-bottom: 50px;
+		@include tablets(){
+			width: 800px;
+		}
+	}
+	td{
+		padding: 15px 15px;
+		width: 33%;
+		span{
+			@include Ubuntu(medium);
+		}
+		.green{
+			@include Ubuntu(medium);
+			color: $text-green;
+		}
+		a{
+			display: flex;
+			align-items: center;
+			color: $text-blue;
+			.fa{
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				font-size: 11px;
+				width: 20px;
+				height: 20px;
+				border: 1px solid $text-blue;
+				border-radius: 50%;
+				text-decoration: none;
+				margin-right: 5px;
+			}
+			&:hover{
+				text-decoration: none;
+			}
+		}
+	}
+}
+.tablet__title{
+	@include Ubuntu(medium);
+	font-size: rem(20px);
+	width: 100%;
+	color: $black;
+	border-bottom: 1px solid $black;
+	padding: 15px 15px;
+	margin-bottom: 0px;
+	border-radius: 15px 15px 0 0;
+	background-color: #F2F2F2;
+	@include tablets(){
+		width: 800px;
+	}
+}
+thead{
+	background-color: #F2F2F2;
+	border-bottom: 1px solid $black;
+}
+.border__wrap{
+	border: 1px solid $black;
+	border-radius: 15px 15px 15px 0;
+	overflow: hidden;
+}
+.with__pic{
+	td{
+		width: auto;
+		&:first-child{
+			width: 50%;
+			img{
+				display: inline-block;
+			}
+			.text{
+				display: inline-block;
+				h4{
+					display: block;
+					color: $black;
+					font-size: rem(18px);
+				}
+				.version{
+					font-size: rem(15px);
+					span{
+						display: block;
+						color: $text-blue;
+					}
+				}
+			}
+		}
+		&:last-child{
+			a{
+				color: $white;
+			}
+		}
+	}
+	
+}

@@ -1,0 +1,174 @@
+.footer{
+	position: relative;
+	width: 100%;
+	padding: 40px 0 25px;
+	background-color: $black;
+	color: $text-grey;
+}
+.footer__wrap{
+	padding: 0 40px;
+	h5{
+		@include Ubuntu(medium);
+		font-size: 17px;
+		color: $white;
+	}
+	@include phones(){
+		padding: 0 0;
+	}
+}
+.footer__first-row{
+	margin-bottom: 25px;
+}
+
+.follow__descr{
+	font-size: 13px;
+	color: $text-grey;
+	p{
+		margin: 0;
+	}
+}
+
+.socials__wrap{
+	@include laptops(){
+		position: absolute;
+		top: 165px;
+	}
+	@include tablets(){
+		top: 250px;
+	}
+}
+.socials__list{
+	display: flex;
+	@include tablets(){
+		margin-bottom: 20px;
+	}
+}
+.social__item{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 35px;
+	height: 35px;
+	background-color: #397197;
+	&:nth-child(2){
+		background-color: #00C1F5;
+	}
+	&:nth-child(3){
+		background-color: #00EEF4;
+	}
+	&:nth-child(4){
+		background-color: #005C84;
+	}
+	&:nth-child(5){
+		background-color: #FF4841;
+	}
+	&:nth-child(6){
+		background-color: #E6E1D7;
+	}
+	&:nth-child(7){
+		background-color: #00C7EC;
+	}
+	&:nth-child(8){
+		background-color: $orange;
+	}
+	&:nth-child(9){
+		background-color: #00A6E3;
+	}
+}
+.appstore__wrap{
+	display: flex;
+	align-items: center;
+	&:hover{
+		color: $white;
+	}
+}
+.appstore__descr{
+	padding-left: 5px;
+	p{
+		font-size: 13px;
+		margin: 0;
+	}
+}
+
+.footer__form{
+	margin-bottom: 25px;
+}
+.email__input{
+	@include laptops(){
+		display: flex;
+		justify-content: flex-end;
+		position: absolute;
+		right: 40px;
+		top: 30px;
+		.input__wrap{
+			input{
+				width: 160px;
+			}
+		}
+	}
+	@include tablets(){
+		position: relative;
+		top: 0;
+		right: 0;
+		margin-bottom: 25px;
+		.input__wrap{
+			width: 100%;
+			input{
+				width: 100%;
+			}
+		}
+	}
+}
+.search__input{
+	@include laptops(){
+		margin-bottom: 80px;
+	}
+	@include tablets(){
+		margin-bottom: 130px;
+	}
+}
+.input__wrap{
+	display: flex;
+	align-items: center;
+	input{
+		height: 35px;
+		width: 350px;
+		color: $white;
+		background-color: rgba($grey, .2);
+		@include laptops(){
+			width: 100%;
+		}
+	}
+	button{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: 32px;
+		width: 120px;
+		color: $black;
+		background-color: $white;
+		border-radius: 0 0 15px 0;
+		border: none;
+		margin-left: -3px;
+	}
+}
+.footer__bottom{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	@include laptops(){
+		flex-wrap: wrap;
+		justify-content: space-around;
+		li{
+			margin-bottom: 25px;
+		}
+	}
+}
+.footer__info{
+	@include Ubuntu(light);
+	font-size: 13px;
+	p{
+		margin: 0;
+	}
+	
+}

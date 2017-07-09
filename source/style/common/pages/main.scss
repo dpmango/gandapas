@@ -1,0 +1,939 @@
+.wrapper{
+	min-width: 1450px;
+	background: linear-gradient(90deg, $bg-1, $bg-2);
+	@include desktops(){
+		min-width: 100%;
+	}
+}
+.bg__pic{
+	width: 100%;
+	height: 100%;
+	background: url('../img/bg.png') center 0 no-repeat;
+	background-size: 1995px;
+	z-index: 100;
+	@include laptops(){
+		position: relative;
+		background: url('../img/main/man.png') center 150px no-repeat;
+		background-size: 1200px;
+	}
+	@include tablets(){
+		background-size: 600px;
+		background-position: 0px 100px;
+	}
+	@include phones(){
+		background-position: -80px 80px;
+	}
+	@include phones-s(){
+		background-position: -100px 80px;
+	}
+}
+.banner__wrap{
+	position: absolute;
+	left: -9999px;
+	padding-left: 10px;
+	padding-top: 25px;
+	opacity: 0;
+	transition: .3s opacity;
+	@include desktops(){
+		display: none;
+	}
+	&.active{
+		opacity: 1;
+		left: 100%;
+	}
+}
+.banner__item{
+	margin-bottom: 100px;
+}
+.main__container{
+	position: relative;
+	@include box-shadow(0px 0px 50px 3px $black);
+}
+.header{
+	display: none;
+	padding: 5px;
+	background-color: $black;
+	@include tablets(){
+		display: none;
+	}
+	&.active{
+		display: block;
+		@include tablets(){
+			display: none;
+		}
+	}
+}
+.points__list{
+	position: relative;
+	display: flex;
+}
+.points__item{
+	position: relative;
+	padding-right: 15px;
+	min-width: 75px;
+	a{
+		@include Ubuntu(light);
+		font-size: rem(16px);
+		color: $text-grey;
+	}
+	&:after{
+		content: "/";
+		position: absolute;
+		top: 50%;
+		right: 5px;
+		color: $text-grey;
+		transform: translateY(-50%);
+	}
+	&:first-child{
+		min-width: 93px;
+	}
+	&.active{
+		display: flex;
+		max-width: 410px;
+		overflow: hidden;
+		a{
+			@include Ubuntu(bold);
+			font-size: rem(16px);
+			min-width: 700px;
+			color: $white;
+		}
+		&:after{
+			display: none;
+		}
+	}
+}
+.registration{
+	color: $text-red;
+	&:hover{
+		color: $text-red;
+	}
+}
+.close__link{
+	color: $grey;
+	.fa{
+		margin-right: 5px;
+	}
+	span{
+		border-bottom: 1px dashed $grey;
+	}
+	&:hover{
+		color: $grey;
+		text-decoration: none;
+		span{
+			border-bottom: none;
+		}
+	}
+}
+
+/********************************************************
+Стили для основной верхней части
+*********************************************************/
+
+.main__info-middle{
+	.container{
+		display: flex;
+		justify-content: space-between;
+		padding-right: 50px;
+		@include laptops(){
+			padding: 0 50px;
+		}
+		@include phones(){
+			padding: 0 30px;
+		}
+	}
+}
+.main__info-top{
+	&.active{
+		padding-top: 30px;
+	}
+}
+.info__middle-left{
+	width: 45%;
+	@include laptops(){
+		width: 0;
+	}
+}
+.info__middle-right{
+	width: 55%;
+	@include laptops(){
+		width: 100%;
+	}
+}
+
+.info__top-list{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding-top: 7px;
+	@include tablets(){
+		display: none;
+	}
+}
+.info__top-item{
+	@include Ubuntu(light);
+	display: flex;
+	align-items: center;
+	font-size: rem(15px);
+	color: $text-grey;
+	a{
+		@include hover($white, none);
+		margin-left: 5px;
+	}
+}
+
+.title{
+	@include tablets(){
+		width: 70%;
+		padding-top: 15px;
+	}
+	h1{
+		font-size: rem(75px);
+		text-align: center;
+		color: $white;
+		letter-spacing: 5px;
+		text-transform: uppercase;
+		@include laptops(){
+			font-size: rem(60px);
+		}
+		@include tablets(){
+			font-size: rem(40px);
+			text-align: left;
+			margin-bottom: 50px;
+		}
+	}
+}
+.mnu__for-mobile{
+	display: none;
+	position: absolute;
+	right: 25px;
+	top: 25px;
+	font-size: 35px;
+	padding: 0 7px;
+	border: 2px solid $white;
+	border-radius: 5px;
+	@include tablets(){
+		display: block;
+	}
+	&:hover{
+		color: $white;
+	}
+}
+
+.mnu{
+	padding-top: 10px;
+	margin-bottom: 40px;
+	@include laptops(){
+		margin-bottom: 15px;
+	}
+	@include tablets(){
+		position: fixed;
+		left: -9999px;
+		top: 0;
+		width: 100%;
+		height: 100vh;
+		background-color: rgba($black, .8);
+		padding: 0 30px;
+		opacity: 0;
+		transition: .3s opacity;
+		.close__btn-wrap{
+			display: flex;
+		}
+		&.active{
+			left: 15px;
+			opacity: 1;
+			z-index: 1000;
+		}
+	}
+}
+.close__btn-wrap{
+	display: none;
+	justify-content: space-between;
+	align-items: center;
+	padding-top: 25px;
+	margin-bottom: 40px;
+}
+.change__language{
+	img{
+		margin-right: 5px;
+	}
+	a{
+		text-decoration: underline;
+	}
+}
+.close__btn{
+	position: relative;
+	font-size: 35px;
+	padding: 0 8px;
+	border: 2px solid $white;
+	border-radius: 5px;
+}
+.mnu__list{
+	display: flex;
+	justify-content: space-around;
+	padding: 0 10px;
+	border: 2px solid $white;
+	border-radius: 10px 10px 10px 0;
+	@include tablets(){
+		flex-direction: column;
+		text-align: right;
+		border: none;
+	}
+}
+.mnu__item{
+	padding: 5px 0;
+	a{
+		color: $white;
+	}
+	&:hover{
+		margin-top: -2px;
+		margin-bottom: -2px;
+		border-top: 2px solid $orange;
+		border-bottom: 2px solid $orange;
+		a{
+			color: $orange;
+			text-decoration: none;
+		}
+	}
+	&.active{
+		margin-top: -2px;
+		margin-bottom: -2px;
+		border-top: 2px solid $orange;
+		border-bottom: 2px solid $orange;
+		a{
+			color: $orange;
+			text-decoration: none;
+		}
+	}
+	@include tablets(){
+		&:hover{
+			border: none;
+			text-decoration: underline;
+		}
+		&.active{
+			border: none;
+		}
+	}
+}
+
+.adaptive__row{
+	@include laptops(){
+		display: flex;
+		justify-content: flex-end;
+	}
+}
+.motivate__title{
+	font-size: rem(30px);
+	color: $white;
+	text-transform: uppercase;
+	margin-bottom: 25px;
+	@include laptops(){
+		width: 50%;
+		margin-bottom: 0;
+	}
+	@include tablets(){
+		width: auto;
+		margin-bottom: 50px;
+	}
+}
+.second__title-list{
+	display: flex;
+	justify-content: space-between;
+	@include laptops(){
+		flex-direction: column;
+	}
+}
+.motivate__descr{
+	@include Ubuntu(light);
+	font-size: rem(15px);
+	color: $text-grey;
+	margin-bottom: 20px;
+	span{
+		@include Ubuntu(medium);
+		background-color: $orange;
+		color: $black;
+		padding: 0 3px;
+		margin: 0 3px;
+	}
+	@include laptops(){
+		width: 50%;
+		margin-bottom: 10px;
+	}
+	@include phones(){
+		width: 100%;
+	}
+}
+
+.row.motivate__link-wrap{
+	margin-bottom: 60px;
+	@include laptops(){
+		width: 50%;
+		margin-left: auto;
+		margin-bottom: 40px;
+	}
+	@include tablets(){
+		width: auto;
+		margin-left: 0;
+	}
+}
+.motivate__link{
+	@include hover($white, none);
+	font-size: rem(15px);
+}
+.red__banner{
+	display: none;
+	width: 150%;
+	padding: 15px 25px;
+	margin-left: -50px;
+	background-color: $red;
+	margin-bottom: 30px;
+	h5{
+		@include Ubuntu(bold);
+		color: $white;
+	}
+	.banner__place{
+		color: $white;
+		font-size: 13px;
+	}
+	a{
+		@include Ubuntu(medium);
+		text-decoration: underline;
+		color: $white;
+	}
+	@include tablets(){
+		display: block;
+	}
+	@include phones(){
+		width: 250%;
+		padding: 15px 30px;
+	}
+}
+.actions__title{
+	@include Ubuntu();
+	font-size: rem(25px);
+	color: $white;
+	margin-bottom: 30px;
+	@include laptops(){
+		width: 50%;
+	}
+	@include tablets(){
+		width: 100%;
+	}
+}
+
+.actions__list{
+	padding-left: 0;
+}
+.actions__item{
+	position: relative;
+	margin-bottom: 20px;
+	&.new{
+		a{
+			&:after{
+				content: "Новинка";
+				position: relative;
+				@include Ubuntu(light);
+				font-size: 12px;
+				right: 0;
+				margin-left: 5px;
+				color: $white;
+				padding: 0 15px 0 10px;
+				background-color: $red;
+				border-radius: 0 0 20px 0;
+			}
+		}
+	}
+	&:hover{
+		.date{
+			background-color: $orange;
+		}
+		.action__link{
+			color: $orange;
+		}
+	}
+	&:nth-child(1n + 4){
+		@include laptops(){
+			display: none;
+		}
+	}
+}
+.date{
+	@include Ubuntu(bold);
+	width: 50px;
+	padding: 1px 0px;
+	background-color: $grey;
+	text-align: center;
+	span{
+		position: relative;
+		display: block;
+		padding-top: 5px;
+		&:before{
+			content: "";
+			display: block;
+			position: absolute;
+			top: 1px;
+			left: 50%;
+			width: 7px;
+			height: 2px;
+			background-color: $black;
+			transform: translate(-50%);
+		}
+	}
+}
+.action__link{
+	@include Ubuntu(medium);
+	font-size: rem(17px);
+}
+.action__descr{
+	@include Ubuntu(italic);
+	font-size: rem(13px);
+	color: $text-grey;
+	margin-top: 12px;
+}
+
+.info__banner{
+	display: flex;
+	justify-content: space-around;
+	padding-top: 10px;
+	width: 480px;
+	height: 87px;
+	background: url('../img/main/rectangle-icon.png') 100% center no-repeat;
+	margin: 30px 0 0 65px;
+	@include laptops(){
+		margin: 0;
+		margin-bottom: 25px;
+	}
+	@include tablets(){
+		display: none;
+	}
+}
+.info__banner-left{
+	h3{
+		font-size: rem(22px);
+		color: $white;
+		margin: 0;
+	}
+	.place{
+		font-size: rem(13px);
+		color: $white;
+	}
+}
+.info__banner-right{
+	padding-top: 10px;
+	a{
+		@include Ubuntu(bold);
+		font-size: 15px;
+		margin-left: -25px;
+		&:hover{
+			color: $white;
+		}
+	}
+}
+
+/****************************************************************
+Стили для части которая начинается с карты
+****************************************************************/
+section{
+	h2{
+		font-size: rem(40px);
+		color: $white;
+		text-transform: uppercase;
+		@include phones(){
+			font-size: rem(29px);
+		}
+	}
+}
+
+.map{
+	margin-bottom: -450px;
+	@include tablets(){
+		margin: 0;
+	}
+}
+.map__container{
+	max-width: 1440px;
+	height: 1198px;
+	background: url('../img/main/map.png') 0 0 no-repeat;
+	background-size: cover;
+	margin-left: -220px;
+	margin-top: -200px;
+	padding: 250px 0 0 220px;
+	@include desktops(){
+		margin-left: 0px;
+		background-position: center 0;
+		padding-left: 0;
+	}
+	@include tablets(){
+		background-size: 760px;
+		background-position: center;
+		margin-top: 0;
+		padding: 0;
+		padding-top: 50px;
+		height: 590px;
+	}
+	@include phones(){
+		height: auto;
+		padding: 50px 0;
+		background: transparent;
+	}
+}
+.map__item{
+	margin-bottom: 65px;
+	@include laptops(){
+		&:first-child{
+			display: none;
+		}
+		&:nth-child(4){
+			display: none;
+		}
+	}
+	@include phones(){
+		width: 100%;
+		text-align: center;
+	}
+}
+@include phones(){
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+.map__title{
+	@include Ubuntu(bold);
+	font-size: rem(30px);
+	color: $white;
+	margin: 0;
+}
+.map__descr{
+	@include Ubuntu(light);
+	font-size: rem(18px);
+	color: $text-grey;
+	line-height: 1;
+	p{
+		margin: 0;
+	}
+}
+
+/************************************************************
+Стили для интернет магазина
+**************************************************************/
+.shop{
+	position: relative;
+	padding-bottom: 30px;
+	margin-bottom: 50px;
+	&:after{
+		content: "";
+		display: block;
+		position: absolute;
+		left: 50%;
+		bottom: 0;
+		width: 80%;
+		height: 2px;
+		background-color: $grey;
+		transform: translateX(-50%);
+	}
+}
+section{
+	.container{
+		padding: 0 30px;
+		@include tablets(){
+			padding: 0 15px;
+		}
+	}
+	h2{
+		margin-bottom: 25px;
+		text-align: left;
+	}
+	h4{
+		color: $white;
+	}
+}
+
+.shop__list-wrap{
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+.shop__list-container{
+	width: 30%;
+	@include laptops(){
+		display: flex;
+		flex-wrap: wrap;
+		width: 100%;
+	}
+}
+
+.shop__title-wrap{
+	@include laptops(){
+		order: -1;
+		width: 130px;
+		margin-top: 8px;
+	}
+}
+.shop__list{
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 15px;
+	width: 100%;
+	@include laptops(){
+		flex-direction: row;
+		justify-content: space-between;
+	}
+	@include tablets(){
+		flex-direction: column;
+	}
+	
+}
+.shop__item{
+	position: relative;
+	height: 170px;
+	margin-bottom: 25px;
+	&:after{
+		content: "";
+		display: block;
+		position: absolute;
+		right: -10px;
+		top: -10px;
+		width: 90px;
+		height: 90px;
+		@include phones(){
+			right: 0;
+			top: 0;
+		}
+	}
+	&:hover{
+		.front__shadow{
+			position: absolute;
+			left: 50%;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			background-color: rgba($black, .5);
+			transition: .3s background;
+			transform: translateX(-50%);
+		}
+	}
+	&.new{
+		&:after{
+			background: url('../img/icons/icon-6.png') center no-repeat;
+			background-size: cover;
+		}
+	}
+	&.action{
+		&:after{
+			background: url('../img/icons/icon-4.png') center no-repeat;
+			background-size: cover;
+		}
+	}
+	&.hit{
+		&:after{
+			background: url('../img/icons/icon-5.png') center no-repeat;
+			background-size: cover;
+		}
+	}
+	&.womens__day{
+		&:after{
+			background: url('../img/icons/icon-1.png') center no-repeat;
+			background-size: cover;
+		}
+	}
+	&.mans__day{
+		&:after{
+			background: url('../img/icons/icon-2.png') center no-repeat;
+			background-size: cover;
+		}
+	}
+	&.half__price{
+		&:after{
+			background: url('../img/icons/icon-3.png') center no-repeat;
+			background-size: cover;
+		}
+	}
+	@include laptops(){
+		width: 48%;
+		height: 220px;
+	}
+	@include tablets(){
+		width: 100%;
+		margin-bottom: 50px;
+	}
+}
+.shop__link{
+	width: 100%;
+	height: 100%;
+	&:hover{
+		color: $white;
+		.play__btn{
+			justify-content: space-between;
+			width: auto;
+			padding: 0 10px;
+			border-radius: 25px 25px 25px 25px;
+			span{
+				display: inline-block;
+			}
+			.fa{
+				margin-right: 15px;
+			}
+		}
+		.info__title{
+			color: $orange;
+			text-decoration: underline;
+		}
+		.price{
+			background-color: $orange;
+			span{
+				display: block;
+			}
+		}
+		.buy__tonque{
+			opacity: 1;
+		}
+	}
+}
+.shop__pic{
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	img{
+		width: 100%;
+	}
+}
+.play__btn{
+	position: absolute;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	left: 50%;
+	top: 50%;
+	width: 50px;
+	height: 50px;
+	border: 2px solid $white;
+	border-radius: 50%;
+	transform: translate(-50%, -50%);
+	.fa{
+		font-size: 25px;
+	}
+	span{
+		@include Ubuntu(medium);
+		display: none;
+		font-size: 15px;
+	}
+}
+.shop__info-container{
+	position: absolute;
+	display: flex;
+	align-items: flex-end;
+	justify-content: space-between;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	padding: 0 25px 10px;
+}
+.info__type{
+	font-size: rem(12px);
+}
+.info__title{
+	font-size: rem(15px);
+}
+.price{
+	@include Ubuntu(medium);
+	font-size: rem(17px);
+	padding: 2px 15px;
+	color: $black;
+	background-color: $white;
+	border-radius: 0 0 10px 0;
+	span{
+		display: none;
+		font-size: 11px;
+		transition: .3s;
+	}
+}
+.buy__tonque{
+	position: relative;
+	width: 100%;
+	padding: 10px 0;
+	padding-left: 25px;
+	background-color: $white;
+	border-radius: 0 0 15px 0;
+	opacity: 0;
+	transition: .3s opacity;
+	z-index: 100;
+	h4{
+		color: $orange;
+		margin: 0;
+	}
+}
+.more__link-wrap{
+	@include laptops(){
+		order: -1;
+		margin-bottom: 25px;
+	}
+	@include phones(){
+		order: 1;
+	}
+}
+.shop__more-link{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 205px;
+	height: 35px;
+	border: 1px solid $grey;
+	border-radius: 10px 10px 10px 0;
+	margin: 0 auto;
+	&:hover{
+		color: $white;
+	}
+}
+
+/*******************************************************
+Стили для блога
+********************************************************/
+
+.blog__list{
+	padding-bottom: 110px;
+}
+.blog__item{
+	position: relative;
+	height: 170px;
+	@include laptops(){
+		&:nth-child(1n + 3){
+			display: none;
+		}
+	}
+	@include tablets(){
+		height: auto;
+		margin-bottom: 25px;
+	}
+}
+.blog__link{
+	width: 100%;
+	&:hover{
+		color: $white;
+		.blog__descr{
+			color: $orange;
+		}
+		.play__btn{
+			justify-content: space-between;
+			width: auto;
+			padding: 0 10px;
+			border-radius: 25px 25px 25px 25px;
+			span{
+				display: inline-block;
+			}
+		}
+	}
+}
+.blog__pic{
+	width: 100%;
+	height: 170px;
+	overflow: hidden;
+	img{
+		width: 100%;
+	}
+}
+.blog__descr{
+	p{
+		font-size: rem(16px);
+		margin: 0;
+	}
+}
