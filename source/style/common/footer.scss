@@ -12,6 +12,10 @@
 		font-size: 17px;
 		color: $white;
 	}
+	@include desktops(){
+		padding: 0 20px;
+	}
+
 	@include phones(){
 		padding: 0 0;
 	}
@@ -32,9 +36,17 @@
 	@include laptops(){
 		position: absolute;
 		top: 165px;
+		left: 55%;
+		transform: translateX(-50%);
 	}
 	@include tablets(){
-		top: 250px;
+		padding-left: 35px;
+		top: 240px;
+		left: 0;
+		transform: none;
+	}
+	@include phones(){
+		padding-left: 15px;
 	}
 }
 .socials__list{
@@ -110,12 +122,19 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	@include phones(){
+		width: 30px;
+		height: 32px;
+	}
 }
 .appstore__wrap{
 	margin-left: 15px;
 	display: flex;
 	align-items: center;
 	transition: all $transitionSpeed $ease;
+	@include tablets(){
+		margin-left: 0;
+	}
 	img{
 		transition: opacity $transitionSpeed $ease;
 	}
@@ -142,12 +161,11 @@
 		display: flex;
 		justify-content: flex-end;
 		position: absolute;
-		right: 40px;
-		top: 30px;
+		right: 20px;
+		top: 40px;
+		max-width: 300px;
 		.input__wrap{
-			input{
-				width: 160px;
-			}
+			width: 100%;
 		}
 	}
 	@include tablets(){
@@ -226,15 +244,27 @@
 	&__bottom{
 	display: flex;
 	align-items: center;
+	margin-right: 30px;
 		@include laptops(){
-			flex-wrap: wrap;
 			justify-content: space-around;
+		}
+		@include tablets(){
+			padding-bottom: 20px;
+			margin-right: 0;
+			flex-direction: column;
+			align-items: flex-start;
 		}
 	}
 	&__author{
 		flex: 0 0 250px;
 		display: flex;
 		align-items: flex-end;
+		@include laptops(){
+			flex-basis: 180px;
+		}
+		@include tablets(){
+			flex: 0 0 auto;
+		}
 		.footer__info{
 			margin-bottom: -5px;
 			margin-left: 10px;
@@ -243,6 +273,15 @@
 	&__contacts{
 		margin-left: auto;
 		display: flex;
+		.footer__info:first-child{
+			flex: 0 0 auto;
+		}
+		@include tablets(){
+			flex: 0 0 auto;
+			margin-left: 0;
+			flex-direction: column;
+			align-items: flex-start;
+		}
 	}
 	&__info{
 		@include Ubuntu(light);
@@ -250,6 +289,11 @@
 		margin-left: 25px;
 		p{
 			margin: 0;
+		}
+		@include tablets(){
+			margin-left: 0;
+			flex: 0 0 auto;
+			margin-top: 15px;
 		}
 	}
 }
