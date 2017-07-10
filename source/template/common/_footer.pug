@@ -1,3 +1,4 @@
+// FOOTER
 footer.footer
 	.container
 		.footer__wrap
@@ -38,37 +39,34 @@ footer.footer
 									i.fa.fa-paper-plane
 						.col-md-6.col-sm-6.col-xs-12
 							a.appstore__wrap(href="#")
-								img(src="assets/img/icons/apple-icon.png")
+								img(src="assets/img/icons/apple-icon.png" srcset="assets/img/icons/apple-icon@2x.png 2x")
 								.appstore__descr
 									p Учебные фильмы 
 									p и аудиокниги
 			form.footer__form.row
-				.col-md-6.col-sm-6.col-xs-12.email__input
+				.col-sm-6.col-xs-12.email__input
 					.input__wrap
 						input(type="email" placeholder="Ваш email")
 						button(type="submit") Подписаться
 				.col-md-6.col-xs-12.search__input
 					.input__wrap
-						input(type="email" placeholder="Поиск по сайту")
+						input(type="text" placeholder="Поиск по сайту")
 						button(type="submit")
 							i.fa.fa-search
 							| Найти
-			ul.footer__bottom
-				li
-					img(src="assets/img/icons/ra-icon.png")
-				li
+			.footer__bottom
+				.footer__author
+					img(src="assets/img/icons/ra-icon.png" srcset="assets/img/icons/ra-icon@2x.png 2x")
 					.footer__info
 						p Агенство интеллектуальных
 						p событий «РА»
-				li
+				.footer__contacts
 					.footer__info
 						p Звоните: 
-						p +7 (495) 180-04-14  
-				li
+						a(href='tel:84951800414') +7 (495) 180-04-14  
 					.footer__info
 						p Пишите: 
-						span mail@radislavgandapas.com 
-				li
+						a(href='mailto:mail@radislavgandapas.com').hoverable-link mail@radislavgandapas.com 
 					.footer__info
 						p Приходите:
 						p Москва, ул.Солянка, 1/2, подъезд 6, офис 41.
