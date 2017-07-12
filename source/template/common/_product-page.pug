@@ -1,6 +1,6 @@
 section.product__page
 	.container
-		.product__wrap
+		.product__wrap.product__wrap-item
 			.product__top
 				.product__left
 					h2 К выступлению готов!
@@ -72,8 +72,7 @@ section.product__page
 			h2 Радислав рекомендует
 			ul.trainings__list.video__type
 				li.training__item
-					.training__pic.another__btn
-						img(src="assets/img/shop-page/pic-1.png")
+					.training__pic.another__btn(style={"background-image": "url(assets/img/shop-page/pic-1.png)"})
 						a.play__btn(href="#")
 							img(src="assets/img/icons/book-icon.png")
 					.training__content
@@ -95,8 +94,7 @@ section.product__page
 									img(src="assets/img/icons/comment-icon.png")
 									| 5
 				li.training__item.shop__item.half__price
-					.training__pic.another__btn
-						img(src="assets/img/shop-page/pic-2.png")
+					.training__pic.another__btn(style={"background-image": "url(assets/img/shop-page/pic-2.png)"})
 						a.play__btn(href="#")
 							img(src="assets/img/icons/book-icon.png")
 					.training__content
@@ -118,8 +116,7 @@ section.product__page
 									img(src="assets/img/icons/comment-icon.png")
 									| 5
 				li.training__item
-					.training__pic.another__btn
-						img(src="assets/img/shop-page/pic-3.png")
+					.training__pic.another__btn(style={"background-image": "url(assets/img/shop-page/pic-3.png)"})
 						a.play__btn(href="#")
 							img(src="assets/img/icons/book-icon.png")
 					.training__content
@@ -153,7 +150,7 @@ section.product__page
 						h4 Cоня К.
 						.author__info 28лет | 10 октября 2016
 					.feedback__right
-						p «Отличная, на мой взгляд, исчерпывающая книга о том, как готовиться к презентации и о том, как выступать с презентацией в любых бизнес-ситуациях (внутри и вне своей компании). Только полезные советы, кстати, не только касательно презентаций и выступлений, а касательно некоторых сторон жизни :) Мне очень понравилась. Я нередко делаю презентации сама и выступаю с ними также, и книга добавила к моему опыту очень ценные знания. Рекомендую читать всем деловым людям, не зависимо от рода бизнеса».
+						p «Отличная, на мой взгляд, исчерпывающая книга о том, как готовиться к пАрезентации и о том, как выступать с презентацией в любых бизнес-ситуациях (внутри и вне своей компании). Только полезные советы, кстати, не только касательно презентаций и выступлений, а касательно некоторых сторон жизни :) Мне очень понравилась. Я нередко делаю презентации сама и выступаю с ними также, и книга добавила к моему опыту очень ценные знания. Рекомендую читать всем деловым людям, не зависимо от рода бизнеса».
 			h2 Оcтавить отзыв о книге
 			form.feedback__form
 				.feedback__socials
@@ -189,8 +186,8 @@ section.product__page
 						.check__wrap
 							input#subscribe.checkbox(type="checkbox" checked)
 							label(for="subscribe")
-							label.text__label(for="subscribe") Я хочу получать уведомления о новых комментариях на электронную почту
-						button.form__btn.save(type="submit") Отправить
+							label.text__label.subscribe-label(for="subscribe") Я хочу получать уведомления о новых комментариях на электронную почту
+						button.form__btn.save(type="submit") Оставить отзыв
 			h5 О магазине
 			ul.about__shop-list
 				li.about__shop-item

@@ -2,70 +2,140 @@
 Стили для страницы заказов
 *********************************************/
 .ordered__wrap{
+	padding-top: 50px;
+	padding-left: 25px;
+	padding-bottom: 45px;
 	@include tablets(){
 		overflow-x: scroll;
 	}
 }
+.order__wrap {
+	padding-top: 58px;
+}
 .table__wrap{
+	margin-bottom: 40px;
 	@include tablets(){
 		width: 800px;
+
 	}
+}
+.table__order-cnt {
+	margin-top: 50px;
 }
 .order__container{
 	.mnu{
 		margin-bottom: 0;
 	}
+	.list-cart {
+		padding-left: 20px;
+		padding-right: 23px;
+		padding-top: 2px;
+		justify-content: flex-end;
+		.info__top-item {
+			padding: 0px 10px;
+			&:first-child {
+				margin-right: auto;
+			}
+		}
+	}
 	.info__top-item{
 		position: relative;
-		&.active{
+		&.user-item {
+			max-width: 168px;
+			position: relative;
+			padding-left: 32px !important;
+			font-size: 14px;
+			&:after {
+				content: '';
+				display: block;
+				width: 40px;
+				height: 20px;
+				position: absolute;
+				left: 4px;
+				background: url(../img/icons/user.png) center center no-repeat;
+			}
+			a {
+				white-space: nowrap;
+				overflow: hidden;
+				text-overflow: ellipsis;
+			}
+		}
+		&.active.user-item{
+
+			position: relative;
 			z-index: 300;
 			background-color: $black;
-			padding: 0 15px;
-			padding-top: 15px;
-			margin-top: -15px;
+			padding: 10px 15px 5px 40px;
+			margin-top: -10px;
+			&:after {
+				background: url(../img/icons/user1.png) center center no-repeat;
+			}
+			&:before {
+				display: block;
+				position: absolute;
+				top: 0;
+				bottom: 0px;
+				content: ' ';
+				width: 50px;
+				right: 0px;
+				background: -webkit-gradient(linear, left top, right top, from(transparent), to(rgba(0, 0, 0, 0.99)));
+				background: -webkit-linear-gradient(left, transparent, rgba(0, 0, 0, 0.99));
+				background: linear-gradient(to right, transparent, rgba(0, 0, 0, 0.99));
+				z-index:9;
+			}
 			.account__mnu{
 				display: flex;
 				flex-direction: column;
 				position: absolute;
 				width: 100%;
-				top: 35px;
+				top: 28px;
 				left: 0px;
 				padding: 15px 0;
 				padding-left: 15px;
 				background-color: $black;
 				border-radius: 0 0 15px 15px;
 				z-index: 200;
+				font-size: 15px;
 				.account__mnu-item{
 					margin-bottom: 10px;
 				}
+			}
+			a {
+				text-overflow: clip;
 			}
 
 		}
 		span{
 			@include Ubuntu(medium);
 			margin-left: 5px;
+			text-decoration: underline;
 		}
 	}
 	.account__mnu{
 		display: none;
 	}
 	.info__banner{
-		margin-bottom: 145px;
+		margin: 27px 0px 136px 8px;
 	}
 	table{
 		width: 100%;
-		margin-bottom: 50px;
+		margin-bottom: 15px;
 		@include tablets(){
 			width: 800px;
 		}
 	}
 	td{
-		padding: 15px 15px;
-		width: 33%;
+		padding: 4px 9px;
+		width: 31%;
+		&:nth-child(2) {
+			width: 35%;
+		}
+
 		span{
 			@include Ubuntu(medium);
 		}
 		.green{
+			display: inline-block;
 			@include Ubuntu(medium);
 			color: $text-green;
 		}
@@ -90,14 +160,23 @@
 			}
 		}
 	}
+	tbody {
+		tr:first-child {
+			td {
+				padding-top: 20px;
+			}
+		}
+	}
+
+
 }
 .tablet__title{
 	@include Ubuntu(medium);
 	font-size: rem(20px);
 	width: 100%;
 	color: $black;
-	border-bottom: 1px solid $black;
-	padding: 15px 15px;
+	border-bottom: 1px solid #808080;
+	padding: 17px 15px;
 	margin-bottom: 0px;
 	border-radius: 15px 15px 0 0;
 	background-color: #F2F2F2;
@@ -107,10 +186,10 @@
 }
 thead{
 	background-color: #F2F2F2;
-	border-bottom: 1px solid $black;
+	border-bottom: 1px solid #808080;
 }
 .border__wrap{
-	border: 1px solid $black;
+	border: 1px solid #808080;
 	border-radius: 15px 15px 15px 0;
 	overflow: hidden;
 }
@@ -145,4 +224,29 @@ thead{
 		}
 	}
 	
+}
+
+.ordered__title {
+	margin-left: 25px;
+}
+.ordered__table-title {
+	font-size: rem(32px);
+	letter-spacing: -0.5px;
+	margin-bottom: 20px;
+}
+
+.ordered__page {
+	.container {
+		padding-bottom: 91px;
+	}
+}
+
+.table__order-cnt {
+	td {
+		font-size: rem(20px);
+		color: #000;
+		font-weight: 500;
+		padding: 14px 12px;
+
+	}
 }

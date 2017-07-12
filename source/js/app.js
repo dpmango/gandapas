@@ -166,4 +166,40 @@ $(document).on('ready', function(){
 			});
 		}
 	}());
-})
+
+
+    strLength('.training__item-title' , 55);
+
+    function strLength(str, length){
+        $(str).each(function(){
+            var review_full = jQuery(this).html();
+            var review = review_full;
+            if( review.length > length )
+            {
+                review = review.substring(0, length);
+                jQuery(this).text( review + '...' );
+            }
+
+        });
+    }
+
+
+    (function(){
+        if(window.innerWidth <= 480) {
+            $('.trainings__list').slick({
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                arrows: false,
+                //autoplay: true,
+                autoplaySpeed: 2000,
+                dots: true,
+            });
+		}
+
+    }());
+
+
+
+
+
+});

@@ -1,12 +1,12 @@
 .footer{
 	position: relative;
 	width: 100%;
-	padding: 40px 0 25px;
+	padding: 36px 0 25px;
 	background-color: $black;
 	color: $text-grey;
 }
 .footer__wrap{
-	padding: 0 40px;
+	padding: 0 35px 0 25px;
 	h5{
 		@include Ubuntu(medium);
 		font-size: 17px;
@@ -21,11 +21,12 @@
 	}
 }
 .footer__first-row{
-	margin-bottom: 18px;
+	margin-bottom: 16px;
 }
 
 .follow__descr{
 	font-size: 13px;
+	line-height: 1.2;
 	color: $text-grey;
 	p{
 		margin: 0;
@@ -50,7 +51,8 @@
 	}
 }
 .socials__list{
-	margin-top: .5px;
+	margin-top: 5.5px;
+	margin-left: -3px;
 	display: flex;
 	font-size: 0;
 	@include tablets(){
@@ -117,7 +119,7 @@
 }
 .social__link{
 	font-size: 1rem;
-	width: 35px;
+	width: 33px;
 	height: 35px;
 	display: flex;
 	align-items: center;
@@ -128,7 +130,8 @@
 	}
 }
 .appstore__wrap{
-	margin-left: 15px;
+	margin-left: -5px;
+	margin-top: 5.5px;
 	display: flex;
 	align-items: center;
 	transition: all $transitionSpeed $ease;
@@ -154,7 +157,7 @@
 }
 
 .footer__form{
-	margin-bottom: 25px;
+	margin-bottom: 13px;
 }
 .email__input{
 	@include laptops(){
@@ -272,6 +275,8 @@
 	}
 	&__contacts{
 		margin-left: auto;
+		margin-top: 12px;
+		margin-right: -2px;
 		display: flex;
 		.footer__info:first-child{
 			flex: 0 0 auto;

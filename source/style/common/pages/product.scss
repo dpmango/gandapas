@@ -3,12 +3,17 @@
 ************************************************/
 .product__wrap{
 	background-color: $white;
-	padding: 35px;
+	padding: 35px 35px 35px;
 	border-radius: 25px 25px 25px 0;
+	&.product__wrap-item {
+		padding-top: 23px;
+	}
 	h2{
 		font-size: rem(30px);
 		color: $black;
 		margin-bottom: 25px;
+		font-family: "Roboto Condensed";
+		letter-spacing: 0.5px;
 	}
 	.enter__by{
 		color: $black;
@@ -23,16 +28,18 @@
 			position: absolute;
 			width: 60%;
 			height: 1px;
-			background-color: $black;
 			bottom: 5px;
 			left: 50%;
 			transform: translateX(-50%);
+			background: #000000;
+			box-shadow: inset -53px 10px 54px -7px white, inset 53px 10px 54px -7px white;
 		}
 	}
 	.feedback__form{
 		position: relative;
 		margin-bottom: 25px;
 		padding-bottom: 25px;
+		padding-right: 230px;
 		&:after{
 			content: "";
 			display: block;
@@ -43,9 +50,19 @@
 			bottom: -10px;
 			left: 50%;
 			transform: translateX(-50%);
+			background: #000000;
+			box-shadow: inset -53px 10px 54px -7px white, inset 53px 10px 54px -7px white;
+
+		}
+		.last__row-left {
+			width: 63%;
 		}
 		label{
 			color: $black;
+			font-weight: 600;
+			&.subscribe-label {
+				font-weight: 400;
+			}
 		}
 		.feedback__input-item{
 			width: 48%;
@@ -95,6 +112,9 @@
 	@include tablets(){
 		width: 100%;
 	}
+	h2 {
+		font-size: rem(40px);
+	}
 }
 .product__author{
 	font-size: rem(15px);
@@ -135,6 +155,7 @@
 	font-size: rem(25px);
 	text-transform: uppercase;
 	margin-bottom: 25px;
+	font-family: "Roboto Condensed";
 }
 .format__item{
 	display: flex;
@@ -166,6 +187,7 @@
 }
 .format__right{
 	margin-top: -2px;
+
 	a{
 		width: 100%;
 		&.grey{

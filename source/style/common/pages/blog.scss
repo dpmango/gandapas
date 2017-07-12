@@ -25,6 +25,12 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	h2 {
+		font-size: rem(60px);
+		letter-spacing: -1px;
+		margin-bottom: 15px;
+	}
+
 }
 .search__mnu-link{
 	display: none;

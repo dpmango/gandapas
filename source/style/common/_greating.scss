@@ -25,7 +25,11 @@ body {
 * {
 		box-sizing: border-box;
 }
-
+button{
+	&:focus {
+		outline: none !important;
+	}
+}
 .wrapper {
 		min-height: 100%;
 		overflow: hidden;
@@ -87,6 +91,7 @@ h1{
 }
 h2{
 	font-size: rem(32px);
+	font-family: "Roboto Condensed";
 }
 h3{
 	font-size: rem(25px);
@@ -182,10 +187,10 @@ button,a{
 		align-items: center;
 		justify-content: center;
 		font-size: rem(15px);
-		width: 160px;
-		height: 40px;
+		width: 200px;
+		height: 38px;
 		border: 1px solid $text-blue;
-		border-radius: 15px 15px 15px 0;
+		border-radius: 9px 9px 9px 0;
 		color: $white;
 		transition: all $transitionSpeed $ease;
 		.fa{
@@ -260,5 +265,45 @@ li{
 		button{
 			background-color: $red;
 		}
+	}
+}
+
+.fa-cloud-download {
+	display: inline-block;
+	width: 20px;
+	height: 17px;
+	background: url(../img/icons/download-ico.png) center center no-repeat;
+	&:before {
+		display: none;
+	}
+}
+.fa-volume-down {
+	display: inline-block;
+	width: 20px;
+	height: 17px;
+	background: url(../img/icons/audio-ico.png) center center no-repeat;
+	&:before {
+		display: none;
+	}
+}
+
+.fa-book {
+	display: inline-block;
+	width: 20px;
+	height: 17px;
+	background: url(../img/icons/book-ico.png) center center no-repeat;
+	&:before {
+		display: none;
+	}
+}
+
+.fa-shopping-bag {
+	display: inline-block;
+	width: 13px;
+	height: 17px;
+	margin-right: 5px;
+	background: url(../img/icons/cart-ico.png) center center no-repeat;
+	&:before {
+		display: none;
 	}
 }

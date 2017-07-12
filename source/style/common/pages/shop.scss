@@ -23,9 +23,12 @@
 section{
 	.training__item{
 		@include phones(){
-			margin-right: 50px;
-			margin-left: 50px;
+			margin-left: 10px;
+			margin-right: 10px;
 			margin-top: 25px;
+			width: 280px;
+			max-width: 100%;
+			box-shadow: 0 0 43px 0.1px rgba(0,0,0, .3);
 		}
 	}
 	.slick-dots{
@@ -157,13 +160,26 @@ section{
 }
 .video__type{
 	.training__item{
-		height: 400px;
+		min-height: 400px;
+		@include tablets(){
+			min-height: 0;
+		}
 	}
 	.training__pic{
 		margin-bottom: 10px;
 	}
 	.training__content{
-		height: 185px;
+		min-height: 0px;
+		height: calc(100% - 215px);
+		@include tablets(){
+			min-height: 0;
+			height: calc(100% - 170px);
+		}
+
+		@include phones(){
+			min-height: 0px;
+			height: calc(100% - 215px);
+		}
 	}
 	.price{
 		padding-left: 0;
@@ -184,16 +200,29 @@ section{
 .special{
 	position: relative;
 	padding-bottom: 50px;
+	&:before {
+		bottom: 50px;
+	}
 	&:after{
 		content: "";
 		display: block;
 		position: relative;
 		width: 80%;
 		height: 1px;
-		background-color: $black;
 		left: 50%;
 		bottom: -25px;
 		transform: translateX(-50%);
+		background: #000000;
+		box-shadow: inset -53px 10px 54px -7px white, inset 53px 10px 54px -7px white;
+	}
+	@include phones() {
+		&:after {
+			top: 50px;
+			width: 100%;
+			left: 0px;
+			right: 0px;
+			transform: translateX(0);
+		}
 	}
 	.womens-day{
 		position: relative;
@@ -210,8 +239,14 @@ section{
 			background: url('../img/icons/icon-large.png') center no-repeat;
 			background-size: cover;
 			left: -11px;
-			top: 42%;
+			top: 168px;
 		}
+		@media (max-width: 768px ) {
+			&:after {
+				top: 123px;
+			}
+		}
+
 	}
 	.new{
 		position: relative;
@@ -227,9 +262,15 @@ section{
 			background: url('../img/icons/icon.png') center no-repeat;
 			background-size: cover;
 			left: -11px;
-			top: 42%;
+			top: 168px;
 			text-align: center;
 		}
+		@media (max-width: 768px ) {
+			&:after {
+				top: 123px;
+			}
+		}
+
 	}
 	.paket{
 		position: relative;
@@ -245,9 +286,16 @@ section{
 			background: url('../img/icons/icon.png') center no-repeat;
 			background-size: cover;
 			left: -11px;
-			top: 42%;
+			top: 168px;
 			text-align: center;
+
 		}
+		@media (max-width: 768px ) {
+			&:after {
+				top: 123px;
+			}
+		}
+
 	}
 }
 .about__shop-list{

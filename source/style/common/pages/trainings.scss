@@ -143,18 +143,56 @@
 	justify-content: space-between;
 	flex-wrap: wrap;
 	margin-bottom: 25px;
+	position: relative;
+	@include phones() {
+		&:before {
+			content: '';
+			display: block;
+			position: absolute;
+			top: 0px;
+			bottom: 25px;
+			right: -25px;
+			width: 35%;
+			z-index: 10;;
+			box-shadow: inset -53px 10px 124px -7px rgba(255,255,255,1);
+
+		}
+	}
+
 	.slick-dots{
 		width: 100%;
 	}
+	.slick-list {
+		width: 70%;
+		overflow: visible;
+	}
+	.slick-slide {
+		height: auto;
+	}
+
 }
 .training__item{
 	position: relative;
 	width: 32%;
-	height: 560px;
+	padding-bottom: 5px;
+	min-height: 560px;
 	overflow: hidden;
 	background-color: $white;
 	border-radius: 25px 25px 25px 0;
 	margin-bottom: 25px;
+	@include tablets(){
+		min-height: 0;
+	}
+	@media (max-width: 600px) {
+		width: 48%;
+	}
+	@include phones(){
+		margin-left: 10px;
+		margin-right: 10px;
+
+	}
+
+
 }
 .training__pic{
 	position: relative;
@@ -165,19 +203,19 @@
 	height: 190px;
 	margin-bottom: 25px;
 	overflow: hidden;
+
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+
 	img{
 		width: 100%;
 	}
 	@include tablets(){
 		height: 145px;
 	}
-	@media screen and (max-width: 608px) {
-    height: 250px;
-    align-items: center;
-  }
-  @include phones(){
-  	height: 190px;
-  }
+
+
 	.play__btn{
 		color: $white;
 		transition: all $transitionSpeed $ease;
@@ -191,15 +229,16 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	height: 330px;
+	min-height: 330px;
+	height: calc(100% - 215px);
 	@include tablets(){
-		height: 270px;
+		min-height: 0px;
+		height: calc(100% - 170px);
 	}
-	@media screen and (max-width: 608px) {
-    height: 250px;
-  }
+
   @include phones(){
-  	height: 330px;
+
+    height: calc(100% - 215px);
   }
 }
 .training__item-title{

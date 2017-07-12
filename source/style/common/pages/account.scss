@@ -1,6 +1,25 @@
 /**********************************************
 Стили для страницы аккаунтов
 **********************************************/
+.account__page {
+	.product__title {
+		font-size: rem(32px);
+		margin-top: 20px;
+		margin-bottom: 18px;
+		letter-spacing: -0.7px;
+		font-weight: 600;
+	}
+	input {
+		width: 354px;
+	}
+	.input__item textarea {
+		width: 354px;
+	}
+}
+
+.account__form {
+	padding-bottom: 31px;
+}
 .input__list{
 	margin-bottom: 60px;
 }
@@ -31,8 +50,8 @@
 	font-size: rem(15px);
 	span{
 		position: absolute;
-		left: 40%;
-		top: 0;
+		left: 41%;
+		top: 10px;
 		@include tablets(){
 			display: none;
 		}
@@ -44,7 +63,7 @@
 .account__form-btns{
 	display: flex;
 	button{
-		width: 140px;
+		width: 158px;
 	}
 	.save{
 		margin-right: 15px;
@@ -53,4 +72,8 @@
 		color: $text-blue;
 		background-color: $white;
 	}
+}
+
+.change-pass {
+	margin-bottom: 33px;
 }

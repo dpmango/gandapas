@@ -50,7 +50,7 @@
 	@include box-shadow(0px 0px 50px 3px $black);
 }
 .header{
-	padding: 8px 5px;
+	padding: 9px 5px 2px;
 	background-color: $black;
 	transform: translate3d(0,-100%,0);
 	transition: transform $transitionSpeed $ease;
@@ -72,6 +72,7 @@
 .points__list{
 	position: relative;
 	display: flex;
+	margin-left: 23px;
 }
 .points__item{
 	flex: 0 0 auto;
@@ -108,10 +109,11 @@
 	}
 }
 .registration{
-	margin-left: 35px;
+	margin-left: 64px;
 	color: $text-red;
 	transition: all $transitionSpeed $ease;
 	background: black;
+	font-weight: 500;
 	&:hover{
 		color: $orange;
 	}
@@ -128,13 +130,17 @@
 }
 .close__link{
 	transition: all $transitionSpeed $ease;
-	margin-right: 40px;
+	margin-right: 34px;
 	font-size: 13px;
 	@include desktops(){
 		margin-right: 10px;
 	}
-	.fa{
+	.ico{
+		display: inline-block;
 		margin-right: 5px;
+		border: none;
+		font-size: 22px;
+		font-weight: 100;
 	}
 	span{
 		border-bottom: 1px dotted $grey;
@@ -159,7 +165,7 @@
 		justify-content: space-between;
 		padding-right: 50px;
 		@include laptops(){
-			padding: 0 50px;
+			padding: 0 30px;
 		}
 		@include phones(){
 			padding: 0 30px;
@@ -174,9 +180,11 @@
 }
 .info__middle-right{
 	width: 55%;
-	@include laptops(){
+	@media (max-width: 960px) {
 		width: 100%;
+		margin: 0 20px;
 	}
+
 }
 
 .info__top-list{
@@ -186,6 +194,8 @@
 	padding-top: 7px;
 	padding-right: 30px;
 	color: white;
+	padding-left: 0;
+
 	@include tablets(){
 		display: none;
 	}
@@ -200,6 +210,13 @@
 		line-height: 1.2;
 		@include hover($white, none);
 		margin-left: 5px;
+		&:focus {
+			color: white;
+		}
+	}
+	.email {
+		text-decoration: underline;
+		font-weight: 400 !important;
 	}
 }
 
@@ -209,7 +226,7 @@
 		padding-top: 15px;
 	}
 	h1{
-		font-size: rem(82px);
+		font-size: rem(81px);
 		text-align: center;
 		color: $white;
 		letter-spacing: 0px;
@@ -244,7 +261,7 @@
 
 .mnu{
 	padding-top: 10px;
-	margin-bottom: 30px;
+	margin-bottom: 54px;
 	@include laptops(){
 		margin-bottom: 15px;
 	}
@@ -292,6 +309,7 @@
 }
 .mnu__list{
 	display: flex;
+	margin: 0px 10px;
 	justify-content: space-around;
 	padding: 0 10px;
 	border: 2px solid $white;
@@ -305,7 +323,7 @@
 }
 .mnu__item{
 	@include Ubuntu(light);
-	padding: 10px 0;
+	padding: 10px 2px;
 	line-height: 1;
 	margin-top: -2px;
 	margin-bottom: -2px;
@@ -325,11 +343,11 @@
 	}
 	@include tablets(){
 		&:hover{
-			border: none;
+			border-color: transparent ;
 			text-decoration: underline;
 		}
 		&.active{
-			border: none;
+			border-color: transparent ;
 		}
 	}
 }
@@ -436,6 +454,7 @@
 	font-size: rem(25px);
 	color: $white;
 	margin-bottom: 30px;
+	margin-left: 15px;
 	@include laptops(){
 		width: 50%;
 	}
@@ -446,10 +465,11 @@
 
 .actions__list{
 	padding-left: 0;
+	margin-left: 12px;
 }
 .actions__item{
 	position: relative;
-	margin-bottom: 20px;
+	margin-bottom: 13px;
 	&:hover{
 		.date{
 			background-color: rgba($orange, .7);
@@ -471,10 +491,11 @@
 .date{
 	@include Ubuntu(bold);
 	width: 50px;
-	padding: 1px 0px;
+	padding: 3px 0px 5px;
 	background-color: rgba(white, .7);
 	text-align: center;
 	transition: background $transitionSpeed $ease;
+	line-height: 1;
 	span{
 		position: relative;
 		display: block;
@@ -494,7 +515,7 @@
 }
 
 .action__right{
-	margin-left: 20px;
+	margin-left: 12px;
 }
 .action__link{
 	@include Ubuntu(medium);
@@ -519,21 +540,21 @@
 		display: inline-block;
 		position: relative;
 		@include Ubuntu(light);
-		font-size: 12px;
-		margin-left: 25px;
+		font-size: 13px;
+		margin-left: 1px;
 		color: $white;
-		padding: 1px 5px 0px 7px;
+		padding: 0px 2px 0px 3px;
 		background-color: $red;
 		&::after{
 			display: block;
 			content: '';
 			position: absolute;
-			right: -18px;
+			right: -12px;
 			top: 0px;
 			width: 0;
 			height: 0;
 			border-style: solid;
-			border-width: 18px 18px 0 0;
+			border-width: 18px 12px 0 0;
 			border-color: $red transparent transparent transparent
 		}
 	}
@@ -543,7 +564,7 @@
 	font-size: rem(13px);
 	line-height: 1.4;
 	color: #d9d9d9;
-	margin-top: 12px;
+	margin-top: 7px;
 }
 
 .info__banner{
@@ -554,7 +575,7 @@
 	width: 480px;
 	height: 87px;
 	background: url('../img/main/rectangle-icon.png') 100% center no-repeat;
-	margin: 30px 0 0 65px;
+	margin: 24px 0 0 71px;
 	@include laptops(){
 		margin: 0;
 		margin-bottom: 25px;
@@ -589,6 +610,10 @@
 			color: $orange;
 		}
 	}
+}
+
+.info__banner-min {
+	margin: 0 0 133px 0;
 }
 
 /****************************************************************
@@ -695,7 +720,7 @@ section{
 }
 section{
 	.container{
-		padding: 0 30px;
+		padding: 0 46px 60px 45px;
 		@include tablets(){
 			padding: 0 15px;
 		}
