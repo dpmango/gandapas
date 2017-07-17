@@ -224,7 +224,7 @@ $(document).on('ready', function(){
 			var shopList = $('.shop__list'),
 					facts = $('.map__list');
 
-			addSlider(facts);
+			// addSlider(facts);
 			addSlider(shopList);
 		}
 		function addSlider(item){
@@ -281,7 +281,6 @@ $(document).on('ready', function(){
     dots: true,
     mobileFirst: true,
     adaptiveHeight: false,
-    slide: '.slick-slideble',
     responsive: [
       {
         breakpoint: 480,
@@ -289,7 +288,10 @@ $(document).on('ready', function(){
       }
     ]
   }
-  _mapSlickMobile.slick(mapSlickMobileOptions);
+  if ( _window.width() < 480 ){
+    _mapSlickMobile.slick(mapSlickMobileOptions);
+  }
+
 
   _window.resized(300, function(e){
     if ( _window.width() > 480 ) {

@@ -673,6 +673,20 @@ section{
 	@include tablets(){
 		margin: 0;
 	}
+  &__list{
+    display: flex;
+    flex-wrap: wrap;
+    .map__item{
+      &:first-child{
+        margin-left: calc(45% - 30px);
+        flex-basis: calc(25% + 30px)
+      }
+      &:nth-child(3){
+        margin-left: 25%;
+      }
+
+    }
+  }
 }
 .map__container{
 	max-width: 1440px;
@@ -703,6 +717,9 @@ section{
 }
 .map__item{
 	margin-bottom: 65px;
+  flex: 0 1 25%;
+  padding-left: 15px;
+  padding-right: 15px;
 	@include laptops(){
 		&:first-child{
 			display: none;
@@ -715,6 +732,9 @@ section{
 		width: 100%;
     margin-bottom: 25px;
 		text-align: center;
+    &:first-child{
+      display: block;
+    }
 	}
 }
 @include phones(){
