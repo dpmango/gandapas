@@ -195,6 +195,9 @@
 		width: 100%;
 		margin: 0 20px;
 	}
+  @include phones-s(){
+    margin: 0 10px;
+  };
 
 }
 
@@ -694,7 +697,7 @@ section{
 	}
 	@include phones(){
 		height: auto;
-		padding: 50px 0;
+		padding: 25px 0 50px 0;
 		background: transparent;
 	}
 }
@@ -710,6 +713,7 @@ section{
 	}
 	@include phones(){
 		width: 100%;
+    margin-bottom: 25px;
 		text-align: center;
 	}
 }
@@ -734,6 +738,46 @@ section{
 	}
 }
 
+.slick-custom-dots{
+  .slick-dots{
+    li{
+      position: relative;
+      font-size: 0;
+      margin-right: 8px;
+      cursor: pointer;
+      &:last-child{
+        margin-right: 0;
+      }
+      &::before{
+        display: inline-block;
+        content: ' ';
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: white;
+        transition: all $transitionSpeed $ease;
+      }
+      &.slick-active{
+        &::before{
+          background: #e01c04;
+        }
+      }
+      &:hover{
+        &::before{
+          background: $orange;
+        }
+      }
+      button{
+        display: none;
+      }
+    }
+  }
+}
+.slick-slide{
+  &:focus{
+    outline: none !important;
+  }
+}
 /************************************************************
 Стили для интернет магазина
 **************************************************************/

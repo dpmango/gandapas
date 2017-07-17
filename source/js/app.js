@@ -1,5 +1,77 @@
+// UTILITIES
+// set dalay on scroll event
+(function($) {
+  var uniqueCntr = 0;
+  $.fn.scrolled = function (waitTime, fn) {
+    if (typeof waitTime === "function") {
+        fn = waitTime;
+        waitTime = 50;
+    }
+    var tag = "scrollTimer" + uniqueCntr++;
+    this.scroll(function () {
+        var self = $(this);
+        var timer = self.data(tag);
+        if (timer) {
+            clearTimeout(timer);
+        }
+        timer = setTimeout(function () {
+            self.removeData(tag);
+            fn.call(self[0]);
+        }, waitTime);
+        self.data(tag, timer);
+    });
+  }
+})(jQuery);
+
+
+// set dalay on resize event
+(function($) {
+  var uniqueCntr = 0;
+  $.fn.resized = function (waitTime, fn) {
+    if (typeof waitTime === "function") {
+        fn = waitTime;
+        waitTime = 50;
+    }
+    var tag = "scrollTimer" + uniqueCntr++;
+    this.resize(function () {
+        var self = $(this);
+        var timer = self.data(tag);
+        if (timer) {
+            clearTimeout(timer);
+        }
+        timer = setTimeout(function () {
+            self.removeData(tag);
+            fn.call(self[0]);
+        }, waitTime);
+        self.data(tag, timer);
+    });
+  }
+})(jQuery);
+
+// READY FUNCTION
+
 $(document).on('ready', function(){
 	// common elements
+  const _window = $(window);
+  const _document = $(document);
+
+  function isRetinaDisplay() {
+    if (window.matchMedia) {
+        var mq = window.matchMedia("only screen and (min--moz-device-pixel-ratio: 1.3), only screen and (-o-min-device-pixel-ratio: 2.6/2), only screen and (-webkit-min-device-pixel-ratio: 1.3), only screen  and (min-device-pixel-ratio: 1.3), only screen and (min-resolution: 1.3dppx)");
+        return (mq && mq.matches || (window.devicePixelRatio > 1));
+    }
+  }
+  // isRetinaDisplay()
+
+  var mobileDevice = isMobile();
+  // detect mobile devices
+  function isMobile(){
+    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+      return true
+    } else {
+      return false
+    }
+  }
 
 	// Prevent # behavior
 	$('[href="#"]').click(function(e) {
@@ -167,37 +239,119 @@ $(document).on('ready', function(){
 		}
 	}());
 
+  strLength('.training__item-title' , 55);
 
-    strLength('.training__item-title' , 55);
+  function strLength(str, length){
+      $(str).each(function(){
+          var review_full = jQuery(this).html();
+          var review = review_full;
+          if( review.length > length )
+          {
+              review = review.substring(0, length);
+              jQuery(this).text( review + '...' );
+          }
 
-    function strLength(str, length){
-        $(str).each(function(){
-            var review_full = jQuery(this).html();
-            var review = review_full;
-            if( review.length > length )
-            {
-                review = review.substring(0, length);
-                jQuery(this).text( review + '...' );
-            }
+      });
+  }
 
-        });
+  (function(){
+      if(window.innerWidth <= 480) {
+          $('.trainings__list').slick({
+              slidesToShow: 1,
+              slidesToScroll: 1,
+              arrows: false,
+              //autoplay: true,
+              autoplaySpeed: 2000,
+              dots: true,
+          });
+	}
+
+  }());
+
+
+  // HOMEPAGE MOBILE SLDIERS
+
+  // MAP SLIDER
+  var _mapSlickMobile = $('.map__list');
+  var mapSlickMobileOptions = {
+    autoplay: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: false,
+    dots: true,
+    mobileFirst: true,
+    adaptiveHeight: false,
+    slide: '.slick-slideble',
+    responsive: [
+      {
+        breakpoint: 480,
+        settings: "unslick"
+      }
+    ]
+  }
+  _mapSlickMobile.slick(mapSlickMobileOptions);
+
+  _window.resized(300, function(e){
+    if ( _window.width() > 480 ) {
+      if (_mapSlickMobile.hasClass('slick-initialized')) {
+        _mapSlickMobile.slick('unslick');
+      }
+      return
     }
+    if (!_mapSlickMobile.hasClass('slick-initialized')) {
+      return _mapSlickMobile.slick(mapSlickMobileOptions);
+    }
+  });
+
+  // HOMEPAGE SHOP SLIDER
+  var _videoCoursesSlickMobile = $('.js-slickVideoCourses');
+  var _booksSlickMobile = $('.js-slickBooks');
+  var _audioSlickMobile = $('.js-slickAudio');
+
+  var homeShopSlickMobileOptions = {
+    autoplay: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: false,
+    dots: true,
+    mobileFirst: true,
+    adaptiveHeight: false,
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: "unslick"
+      }
+    ]
+  }
+
+  _videoCoursesSlickMobile.slick(homeShopSlickMobileOptions);
+  _booksSlickMobile.slick(homeShopSlickMobileOptions);
+  _audioSlickMobile.slick(homeShopSlickMobileOptions);
 
 
-    (function(){
-        if(window.innerWidth <= 480) {
-            $('.trainings__list').slick({
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                arrows: false,
-                //autoplay: true,
-                autoplaySpeed: 2000,
-                dots: true,
-            });
-		}
-
-    }());
-
+  _window.resized(300, function(e){
+    if ( _window.width() > 768 ) {
+      if (_booksSlickMobile.hasClass('slick-initialized')) {
+        _booksSlickMobile.slick('unslick');
+      }
+      if (_videoCoursesSlickMobile.hasClass('slick-initialized')) {
+        _videoCoursesSlickMobile.slick('unslick');
+      }
+      if (_audioSlickMobile.hasClass('slick-initialized')) {
+        _audioSlickMobile.slick('unslick');
+      }
+      return
+    }
+    if (!_videoCoursesSlickMobile.hasClass('slick-initialized')) {
+      return _videoCoursesSlickMobile.slick(homeShopSlickMobileOptions);
+    }
+    if (!_booksSlickMobile.hasClass('slick-initialized')) {
+      return _booksSlickMobile.slick(homeShopSlickMobileOptions);
+    }
+    if (!_audioSlickMobile.hasClass('slick-initialized')) {
+      return _audioSlickMobile.slick(homeShopSlickMobileOptions);
+    }
+  });
 
 
 
