@@ -773,6 +773,11 @@ section{
     }
   }
 }
+.slick-list *{
+  &:focus{
+    outline: none !important;
+  }
+}
 .slick-slide{
   &:focus{
     outline: none !important;
@@ -785,6 +790,10 @@ section{
 	position: relative;
 	padding-bottom: 30px;
 	margin-bottom: 50px;
+  @include desktops(){
+    padding-bottom: 0;
+
+  }
 	&:after{
 		content: "";
 		display: block;
@@ -825,6 +834,7 @@ section{
 		flex-wrap: wrap;
 		width: 100%;
 	}
+
 }
 
 .shop__title-wrap{
@@ -833,6 +843,15 @@ section{
 		width: 130px;
 		margin-top: 8px;
 	}
+  @include phones(){
+    margin-top: 20px;
+    width: auto;
+    margin-bottom: 5px;
+  }
+  h4{
+    font-size: 23px;
+    @include Ubuntu(medium);
+  }
 }
 .shop__list{
 	display: flex;
@@ -846,6 +865,12 @@ section{
 	@include tablets(){
 		flex-direction: column;
 	}
+  .slick-dots{
+    @include phones(){
+      margin-top: -20px;
+      z-index: -1;
+    }
+  }
 
 }
 .shop__item{
@@ -922,9 +947,17 @@ section{
 		height: 220px;
 	}
 	@include tablets(){
+    margin-top: 10px;
+    height: 300px;
 		width: 100%;
 		margin-bottom: 50px;
 	}
+  @include phones(){
+    height: 220px;
+  }
+  @include phones-s(){
+    height: 170px;
+  }
 }
 .shop__link{
 	width: 100%;
@@ -959,11 +992,19 @@ section{
 	}
 }
 .shop__pic{
+  position: relative;
 	width: 100%;
 	height: 100%;
 	overflow: hidden;
 	img{
-		width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+		min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
 	}
 }
 .play__btn{
@@ -1036,9 +1077,17 @@ section{
 	@include laptops(){
 		order: -1;
 		margin-bottom: 25px;
+    margin-left: auto;
 	}
+  @include tablets(){
+    margin-left: auto;
+  }
 	@include phones(){
 		order: 1;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15px;
+    margin-bottom: 15px;
 	}
 }
 .shop__more-link{

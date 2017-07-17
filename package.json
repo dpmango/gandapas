@@ -4,6 +4,7 @@
   "author": "GlooMpiQue",
   "license": "ISC",
   "scripts": {
+    "surge": "surge --domain steadfast-burn.surge.sh",
     "postinstall": "bower install"
   },
   "devDependencies": {

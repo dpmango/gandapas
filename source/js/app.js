@@ -310,6 +310,7 @@ $(document).on('ready', function(){
 
   var homeShopSlickMobileOptions = {
     autoplay: true,
+    autoplaySpeed: 5000,
     slidesToShow: 1,
     slidesToScroll: 1,
     arrows: false,
@@ -317,10 +318,17 @@ $(document).on('ready', function(){
     mobileFirst: true,
     adaptiveHeight: false,
     responsive: [
+      // {
+      //   breakpoint: 480,
+      //   settings: {
+      //     slidesToShow: 2,
+      //     slidesToScroll: 2
+      //   }
+      // },
       {
         breakpoint: 768,
         settings: "unslick"
-      }
+      },
     ]
   }
 
@@ -343,13 +351,13 @@ $(document).on('ready', function(){
       return
     }
     if (!_videoCoursesSlickMobile.hasClass('slick-initialized')) {
-      return _videoCoursesSlickMobile.slick(homeShopSlickMobileOptions);
+      _videoCoursesSlickMobile.slick(homeShopSlickMobileOptions);
     }
     if (!_booksSlickMobile.hasClass('slick-initialized')) {
-      return _booksSlickMobile.slick(homeShopSlickMobileOptions);
+      _booksSlickMobile.slick(homeShopSlickMobileOptions);
     }
     if (!_audioSlickMobile.hasClass('slick-initialized')) {
-      return _audioSlickMobile.slick(homeShopSlickMobileOptions);
+      _audioSlickMobile.slick(homeShopSlickMobileOptions);
     }
   });
 
