@@ -20,8 +20,9 @@
 	}
 	@include laptops(){
 		position: relative;
-		background: url('../img/main/man.png') center 150px no-repeat;
-		background-size: 1200px;
+		background: url('../img/main/man2.png') left 200px no-repeat;
+		// background-position: center 150px;
+		background-size: 992px;
 	}
 	@include tablets(){
 		background-size: 600px;
@@ -443,10 +444,19 @@
 .row.motivate__link-wrap{
 	margin-bottom: 60px;
 	@include laptops(){
+		position: relative;
 		width: 50%;
 		margin-left: auto;
     margin-right: 0;
-		margin-bottom: 40px;
+		margin-bottom: 20px;
+		&::after{
+			padding-top: 40px;
+			display: block;
+			content: ' ';
+			width: calc(100% + 50px);
+			height: 1px;
+			background: url('../img/main/topTabletSeparator.png') no-repeat right center;
+		}
 	}
 	@include tablets(){
 		width: auto;
@@ -525,7 +535,7 @@
 			}
 		}
 	}
-	&:nth-child(1n + 4){
+	&:nth-child(1n + 5){
 		@include laptops(){
 			display: none;
 		}
@@ -682,8 +692,8 @@ section{
 .map{
 	margin-bottom: -400px;
   @include laptops(){
-    padding-top: 90px;
-    margin-bottom: 50px;
+    padding-top: 160px;
+    margin-bottom: 0px;
   }
 	@include tablets(){
 		margin: 0;
