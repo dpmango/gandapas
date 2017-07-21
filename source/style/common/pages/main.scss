@@ -293,7 +293,10 @@
 		margin-bottom: 15px;
 	}
 	@include tablets(){
+		display: flex;
+		flex-direction: column;
 		position: fixed;
+		align-items: flex-end;
 		left: 15px;
 		top: 0;
 		width: 100%;
@@ -307,6 +310,10 @@
 		transition: all $transitionSpeed $ease;
 		.close__btn-wrap{
 			display: flex;
+			width: 100%;
+			.change__language{
+				margin-right: auto;
+			}
 		}
 		&.active{
 			opacity: 1;
@@ -344,6 +351,32 @@
 	border: 2px solid $white;
 	background: rgba(white, .1);
 	border-radius: 10px 10px 10px 0;
+	&-mobile-contacts{
+		display: none;
+		text-align: right;
+		margin-top: auto;
+		padding-top: 20px;
+		padding-bottom: 5vh;
+	}
+	&-mobile-item{
+		margin-bottom: 10px;
+		color: white;
+		font-size: 15px;
+		display: flex;
+		width: 100%;
+		align-items: center;
+		justify-content: flex-end;
+		.ico{
+			margin-right: 8px;
+			transform: scale(1.5);
+		}
+		.hoverable-link{
+			margin-left: 5px;
+		}
+		&:first-child{
+			margin-bottom: 25px;
+		}
+	}
   @include laptops(){
     margin: 0 auto;
     max-width: 700px;
@@ -352,6 +385,11 @@
 		flex-direction: column;
 		text-align: right;
 		border: none;
+		background: transparent;
+		margin-right: 0;
+		&-mobile-contacts{
+			display: block;
+		}
 	}
 }
 .mnu__item{
@@ -375,11 +413,10 @@
 		}
 	}
 	@include tablets(){
+		@include Ubuntu(medium);
+		font-size: 25px;
 		&:hover, &.active{
       border-color: transparent;
-      .mnu__link{
-        border-bottom: 1px solid $orange;
-      }
 		}
 	}
 }
