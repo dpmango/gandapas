@@ -1,0 +1,251 @@
+.slider__wrap
+  position: relative
+  .slick-dots
+    width: 100%
+    margin-top: 25px
+
+.schedule__list
+  position: relative
+  margin-bottom: 70px
+  &:after
+    content: ""
+    display: block
+    position: absolute
+    height: 100%
+    width: 50px
+    background: linear-gradient(to right, transparent, #192029, #151e26)
+    right: 0
+    top: 0
+    +tablets
+      display: none
+  &:before
+    content: ""
+    display: block
+    position: absolute
+    height: 100%
+    width: 50px
+    background: linear-gradient(to right, rgba(#162a3e, 0.8), rgba(#162a3e, 0.5), transparent)
+    left: 0
+    top: 0
+    z-index: 100
+    +tablets
+      display: none
+
+.schedule__item
+  margin-top: 15px
+  margin-right: 10px
+  margin-left: 10px
+  &.moscow
+    .schedule__link
+      position: relative
+      border: 3px solid $red
+      &:before
+        content: "Москва"
+        +Ubuntu(medium)
+        display: flex
+        position: absolute
+        font-size: rem(11px)
+        width: 73px
+        height: 23px
+        top: -10px
+        left: -7px
+        padding-left: 15px
+        background: url("../img/trainings/icon.png") center no-repeat
+
+.schedule__link
+  display: block
+  padding: 15px
+  color: $black
+  background-color: $white
+  border-radius: 15px
+  transition: all $transitionSpeed $ease
+  &:hover
+    background-color: $orange
+    text-decoration: none
+
+.schedule__top
+  display: flex
+  margin-bottom: 15px
+
+.schedule__date
+  +Ubuntu(bold)
+  font-size: rem(15px)
+
+.schedule__place
+  font-size: rem(15px)
+
+.schedule__title
+  +Ubuntu(light)
+  font-size: rem(15px)
+  text-decoration: underline
+  margin-bottom: 10px
+
+.schedule__guiding
+  +Ubuntu(light)
+  font-size: rem(13px)
+  span
+    +Ubuntu(bold)
+    display: block
+    font-size: rem(13px)
+
+.slider__arrows
+  position: absolute
+  width: 100%
+  top: 50%
+  background-color: $black
+
+.slider__arrow-left
+  position: absolute
+  height: 35px
+  width: 20px
+  background: url("../img/trainings/arrow-left.png") center no-repeat
+  background-size: cover
+  left: 20px
+  top: 50%
+  border: none
+  z-index: 200
+  +tablets
+    display: none
+
+.slider__arrow-right
+  position: absolute
+  height: 35px
+  width: 20px
+  background: url("../img/trainings/arrow-right.png") center no-repeat
+  background-size: cover
+  top: 50%
+  right: 20px
+  border: none
+  z-index: 200
+  +tablets
+    display: none
+
+.training__title
+  color: $white
+  text-transform: uppercase
+  margin-bottom: 40px
+
+.trainings__list
+  display: flex
+  justify-content: space-between
+  flex-wrap: wrap
+  margin-bottom: 25px
+  position: relative
+  +phones
+    &:before
+      content: ''
+      display: block
+      position: absolute
+      top: 0px
+      bottom: 25px
+      right: -25px
+      width: 35%
+      z-index: 10
+      box-shadow: inset -53px 10px 124px -7px rgba(255, 255, 255, 1)
+
+  .slick-dots
+    width: 100%
+  .slick-list
+    width: 70%
+    overflow: visible
+  .slick-slide
+    height: auto
+
+.training__item
+  position: relative
+  width: 32%
+  padding-bottom: 5px
+  min-height: 560px
+  overflow: hidden
+  background-color: $white
+  border-radius: 25px 25px 25px 0
+  margin-bottom: 25px
+  +tablets
+    min-height: 0
+
+  @media (max-width: 600px)
+    width: 48%
+  +phones
+    margin-left: 10px
+    margin-right: 10px
+
+.training__pic
+  position: relative
+  display: flex
+  align-items: flex-end
+  justify-content: center
+  width: 100%
+  height: 190px
+  margin-bottom: 25px
+  overflow: hidden
+  background-position: center center
+  background-repeat: no-repeat
+  background-size: cover
+  img
+    width: 100%
+  +tablets
+    height: 145px
+
+  .play__btn
+    color: $white
+    transition: all $transitionSpeed $ease
+    &:hover
+      text-decoration: none
+
+.training__content
+  padding: 0 10px
+  display: flex
+  flex-direction: column
+  justify-content: space-between
+  min-height: 330px
+  height: calc(100% - 215px)
+  +tablets
+    min-height: 0px
+    height: calc(100% - 170px)
+
+  +phones
+    height: calc(100% - 215px)
+
+.training__item-title
+  +Ubuntu(medium)
+  font-size: rem(20px)
+  color: $black
+
+.training__descr
+  font-size: rem(13px)
+
+.training__readmore-btn
+  +Ubuntu(medium)
+  display: flex
+  align-items: center
+  justify-content: center
+  font-size: rem(18px)
+  padding: 10px 0
+  width: 100%
+  background-color: $text-blue
+  border-radius: 10px 10px 10px 0
+  margin-bottom: 15px
+  &:hover
+    text-decoration: none
+
+.training__donwload
+  display: flex
+  font-size: rem(13px)
+  color: $text-blue
+  text-decoration: underline
+  margin-bottom: 15px
+  img
+    margin-right: 5px
+
+.training__category
+  font-size: rem(13px)
+  span
+    text-decoration: underline
+    margin-left: 5px
+
+.trainig__info
+  color: $white
+  font-size: rem(15px)
+  margin-bottom: 50px
+  span
+    text-decoration: underline
