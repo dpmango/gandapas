@@ -122,7 +122,7 @@ $(document).on('ready', function(){
 		})
 		toggleActive(user, userMnu);
 		toggleActive(blogMnu, $('.blog__main-right'), blogMnu);
-		toggleActive(closeBtn, $('.header'));
+		toggleActive(closeBtn, $('.header'), $('.bg__pic'));
 
 		function toggleActive(elem, block, block2){
 			elem.on('click', function(e){
