@@ -1,7 +1,7 @@
 extends ../_template
 
 block variables
-  - var title = 'Home page'
+  - var title = 'Tech'
 
 block content
   .content-wrapper
@@ -10,12 +10,10 @@ block content
     .main-content.hint-wrapper
       .main-content-inner.container-wrapper
         .container
-          .row.catalog-wrapper
+          .row.catalog-wrapper.content
             .col-md-offset-1.col-md-10
               h1
-                | Заголовок первого уровня 
-                br
-                | (Roboto, 25px/30px, #231f20)
+                | Заголовок первого уровня <br> (roboto, 60px/60px, #000)
               p
                 | Ах, не говорите мне про Австрию! Я ничего не понимаю, может быть, но Австрия никогда не хотела и не хочет войны.
                 | Она предает нас. Россия одна должна быть спасительницей Европы. Наш благодетель знает свое высокое призвание и
@@ -26,19 +24,19 @@ block content
                 | На кого нам надеяться, я вас спрашиваю?.. Англия с своим коммерческим духом не поймет и не может понять всю
                 | высоту души императора Александра. Она отказалась очистить Мальту. Она хочет видеть, ищет заднюю мысль наших
                 | действий.
-              h2 Заголовок второго уровня (Roboto, 20px/27px, #231f20)
+              h2 h2
               p
                 | Что они сказали Новосильцеву? Ничего. Они не поняли, они не могли понять самоотвержения нашего императора,
                 | который ничего не хочет для себя и все хочет для блага мира. И что они обещали? Ничего. И что обещали, и того не
                 | будет! Пруссия уже объявила, что Бонапарте непобедим и что вся Европа ничего не может против него... И я не верю
                 | ни в одном слове ни Гарденбергу, ни Гаугвицу. Я верю в одного Бога и в высокую судьбу нашего милого
                 | императора.
-              h3 Заголовок третьего уровня (Roboto, 18px/23px, #231f20)
+              h3 h3
               p
                 | В то время как Анна Павловна назвала императрицу, лицо ее вдруг представило глубокое и искреннее выражение
                 | преданности и уважения, соединенное с грустью, что с ней бывало каждый раз, когда она в разговоре упоминала о
                 | своей высокой покровительнице.
-              h4 Заголовок четвертого уровня (Roboto Regular, 15px/20px, #231f20)
+              h4 Заголовок четвертого уровня 
               p
                 | Князь равнодушно замолк, Анна Павловна, с свойственною ей придворною и женскою ловкостью и быстротою такта,
                 | захотела и щелкануть князя за то, что он дерзнул так отозваться о лице, рекомендованном императрице, и в то же
@@ -46,9 +44,12 @@ block content
               h2 Ссылки
               p
                 a(href='#') Читать далее
+              p
+                a(href='#').link-dotted Читать далее
+                      
               .row
                 .col-md-6.col-xs-12
-                  h3 Маркированный список
+                  h3 Буллиты
                   ul
                     li
                       | Гостиная Анны Павловны начала понемногу наполняться.
@@ -86,39 +87,17 @@ block content
                 .row
                   .col-md-4.col-xs-12
                     .form-group
-                      label(for='exampleInputText1') input[type="text"]
+                      label(for='exampleInputText1') Плейсхолдер
                       input#exampleInputText1.form-control(type='text', placeholder='Text')
                   .col-md-4.col-xs-12
                     .form-group
-                      label(for='exampleInputText2') input[type="text"]:disabled
+                      label(for='exampleInputText2') Неактивный плейсхолдер
                       input#exampleInputText2.form-control(type='text', placeholder='Text', disabled='')
                   .col-md-4.col-xs-12
                     .form-group.has-error
-                      label(for='exampleInputText3') .has-error input[type="text"]
+                      label(for='exampleInputText3') Плейсхолдер с ошибкой
                       input#exampleInputText3.form-control(type='text', placeholder='Text')
-                .row
-                  .col-md-4.col-xs-12
-                    .form-group
-                      label(for='exampleInputPassword1') input[type="password"]
-                      input#exampleInputPassword1.form-control(type='password', placeholder='Password')
-                  .col-md-4.col-xs-12
-                    .form-group
-                      label(for='exampleInputPassword2') input[type="password"]:disabled
-                      input#exampleInputPassword2.form-control(type='password', placeholder='Password', disabled='')
-                .row
-                  .col-md-4.col-xs-12
-                    .form-group
-                      label(for='exampleTextarea1') textarea
-                      textarea#exampleTextarea1.form-control(placeholder='Textarea', rows='3')
-                  .col-md-4.col-xs-12
-                    .form-group
-                      label(for='exampleTextarea2') textarea:disabled
-                      textarea#exampleTextarea2.form-control(placeholder='Textarea', rows='3', disabled='')
-                .row
-                  .col-md-4.col-xs-12
-                    .form-group
-                      label(for='exampleInputFile1') input[type="file"]
-                      input#exampleInputFile1.form-control.widget.uploadpicker(type='file')
+
                 .row
                   .col-md-4.col-xs-12
                     .form-group
@@ -231,36 +210,7 @@ block content
                       label
                         input(type='radio', name='radio', disabled='')
                         span input[type="radio"]:disabled
-                .row
-                  .col-md-4.col-xs-12
-                    .form-group
-                      button.btn(type='submit') Показать товары (234)
-                  .col-md-4.col-xs-12
-                    .form-group
-                      button.btn(type='submit', disabled='') Показать товары (234)
-                .row
-                  .col-md-4.col-xs-12
-                    .form-group
-                      button.btn.btn-primary(type='submit')
-                        span.icon.icon-close
-                        | Сбросить фильтры
-                  .col-md-4.col-xs-12
-                    .form-group
-                      button.btn.btn-primary(type='submit', disabled='')
-                        span.icon.icon-close
-                        | Сбросить
-                        | 						фильтры
-                .row
-                  .col-md-4.col-xs-12
-                    .form-group
-                      button.btn.btn-sm(type='submit')
-                        span.icon.icon-plus
-                        | В заказ
-                  .col-md-4.col-xs-12
-                    .form-group
-                      button.btn.btn-sm(type='submit', disabled='')
-                        span.icon.icon-plus
-                        | В заказ
+
               h2 Оповещения
               .alert.alert-success
                 strong Спасибо!

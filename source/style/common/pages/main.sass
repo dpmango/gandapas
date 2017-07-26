@@ -15,6 +15,14 @@
     transform: translate3d(0, -38px, 0)
     .banner__wrap
       top: 38px
+  &--no-line
+    background-image: url('../img/man-bg.png')
+    +laptops
+      background: url("../img/main/man2.png") left 200px no-repeat
+      background-size: 992px
+    +tablets
+      background: url("../img/main/man2.png") left 200px no-repeat
+
   &__mobile
     display: none
     position: absolute
@@ -817,3 +825,14 @@ section
 .slick-slide
   &:focus
     outline: none !important
+
+
+.shopping-line
+  +laptops
+    font-size: 0
+    span
+      font-size: 14px
+      text-overflow: ellipsis
+      white-space: nowrap
+      overflow: hidden
+      max-width: 130px

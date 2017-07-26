@@ -138,6 +138,17 @@ $(document).on('ready', function(){
 		}
 	}());
 
+  $(document).mouseup(function (e) {
+    var container = new Array();
+    container.push($('.user-item'));
+
+    $.each(container, function(key, value) {
+        if (!$(value).is(e.target) && $(value).has(e.target).length === 0) {
+            $(value).closest('.info__top-item').removeClass('active');
+        }
+    });
+  });
+
 	//табы
 	(function(){
 		var tabElem = $('.search__form-link'),
