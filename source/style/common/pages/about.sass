@@ -67,6 +67,8 @@
   overflow: hidden
   img
     width: 100%
+  +laptops
+    height: 260px
   +phones
     width: 100%
     height: auto
@@ -98,10 +100,13 @@
   color: $black
   background-color: $white
   border-radius: 15px 15px 15px 0
+  transition: all $transitionSpeed $ease
   span
     font-size: rem(13px)
   &:hover
     text-decoration: none
+    color: white
+    background: #0084ff
 
 .chanels
   padding: 25px
@@ -126,6 +131,8 @@
   flex-wrap: wrap
   +phones
     justify-content: flex-start
+    margin-left: -25px
+    margin-right: -10px
 
 .channel__item
   display: flex
@@ -138,6 +145,8 @@
     max-width: 100%
   +phones
     width: 33%
+    padding-left: 10px
+    padding-right: 10px
 
 .clients__title, .interv__title, .photo__title
   font-size: rem(45px)
@@ -170,28 +179,33 @@
 
 .clients__list
   display: flex
-  align-items: center
+  align-items: stretch
   justify-content: space-around
   flex-wrap: wrap
   +phones
     justify-content: flex-start
 
+
 .clients__item
+  flex: 1 1 auto
   display: flex
   align-items: center
+  flex-direction: column
   justify-content: center
   width: 14%
   margin-bottom: 17px
+  padding-left: 10px
+  padding-right: 10px
+  img
+    margin-top: auto
+    margin-bottom: auto
+    max-width: 100%
   &:nth-child(1n + 13)
     width: 20%
     +tablets
       width: 25%
 
-    +phones
-      width: 50%
 
-    +phones-s
-      width: 100%
   &:last-child
     width: 45%
     +tablets
@@ -205,9 +219,9 @@
       margin-right: 5px
   +tablets
     width: 20%
-
   +phones
-    width: 33%
+    width: 25%
+
 
 .videos__list
   position: relative
