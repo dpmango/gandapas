@@ -221,6 +221,9 @@
   height: 170px
   width: 32%
   margin-bottom: 25px
+  &:hover
+    .video__descr
+      background: linear-gradient(to top, transparent, transparent, transparent)
   +tablets
     width: 48%
     &:nth-child(1n + 7)
@@ -248,8 +251,22 @@
   left: 0
   bottom: 0
   padding: 0 15px
+  z-index: 2
   color: $white
   background: linear-gradient(to top, $black, $black, transparent)
+  transition: all .3s $ease
+
+.video__timestamp
+  +Ubuntu(bold)
+  position: absolute
+  font-size: 14px
+  bottom: 3px
+  right: 3px
+  z-index: 1
+  line-height: 1
+  background: $black
+  color: $white
+  padding: 2px 5px
 
 .gallery__list
   display: flex
@@ -261,19 +278,29 @@
   width: 16.6%
   overflow: hidden
   &:last-child
+    display: flex
+    flex-direction: column
     .gallery__link
+      margin-top: auto
+      margin-bottom: auto
       +Ubuntu(medium)
       display: flex
       flex-direction: column
       padding: 15px
-      border: 2px solid $white
+      line-height: 1.1
+      border: 3px solid $white
       background-color: #397197
       font-size: rem(18px)
       span
+        display: inline-block
+        margin-top: 7px
+        text-align: left
         +Ubuntu
         font-size: rem(15px)
       &:hover
+        background: $orange
         text-decoration: none
+        color: white
   +laptops
     width: 20%
     &:nth-child(1n + 10)

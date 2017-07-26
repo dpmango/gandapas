@@ -376,5 +376,9 @@ $(document).on('ready', function(){
 
 
 
-
+  // MODALS
+  $(function() {
+      $.cartonbox();
+  });
+  
 });
