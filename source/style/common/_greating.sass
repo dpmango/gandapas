@@ -39,6 +39,9 @@ body
   @extend %clearfix
   width: $container-width
   margin: 0 auto
+  &--narrow
+    max-width: 900px
+    
 
 li
   list-style: none
@@ -153,7 +156,7 @@ input
   color: $text-red
 
 button, a
-  &.form__btn
+  &.form__btn, &.btn-primary
     +Ubuntu(bold)
     display: flex
     align-items: center
@@ -174,6 +177,10 @@ button, a
       background-color: $text-blue
       &:hover
         background-color: $blue
+  &.btn-primary
+    width: auto
+    padding-left: 45px
+    padding-right: 45px
 
 li
   &.tab__item
