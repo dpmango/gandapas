@@ -380,5 +380,10 @@ $(document).on('ready', function(){
   $(function() {
       $.cartonbox();
   });
-  
+
+  $('.modal-close').on('click', function(){
+    $('.cartonbox-close').click();
+    $('.cartonbox-close').hide();
+  });
+
 });

@@ -20,8 +20,8 @@
   max-width: 700px
   width: 100%
   padding: 0
-  .cartonbox-close
-    display: none
+  & + .cartonbox-close
+    display: none !important
   .cartonbox-flex
     padding: 0
   .cartonbox-container
@@ -33,7 +33,7 @@
       bottom: 20px
 
 
-.cartonbox-close
+.cartonbox-close, .modal-close
   background: url('../img/icons/modal-close.svg') no-repeat center
   background-size: cover
   width: 40px
@@ -53,6 +53,7 @@
     align-items: center
     overflow: hidden
   &-box
+    position: relative
     form
       max-width: 304px
       margin-top: 15px
@@ -70,7 +71,6 @@
       left: 60px
       z-index: 3
       bottom: 35px
-
   &-holder
     display: flex
     flex-direction: column
@@ -83,3 +83,9 @@
       margin-bottom: auto
   img
     max-width: 100%
+
+  &-close
+    position: absolute
+    top: 15px
+    right: 35px
+    cursor: pointer
