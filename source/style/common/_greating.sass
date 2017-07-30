@@ -41,7 +41,7 @@ body
   margin: 0 auto
   &--narrow
     max-width: 900px
-    
+
 
 li
   list-style: none
@@ -181,6 +181,18 @@ button, a
     width: auto
     padding-left: 45px
     padding-right: 45px
+
+.btn-danger
+  +Ubuntu(medium)
+  text-align: center
+  font-size: rem(25px)
+  border: 1px solid #ff0000
+  border-radius: 9px 9px 9px 0
+  background: #ff0000
+  color: $white
+  transition: all $transitionSpeed $ease
+  &:hover
+    background: #ac2925
 
 li
   &.tab__item

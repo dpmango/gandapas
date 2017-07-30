@@ -160,16 +160,16 @@
             </div>
             <div class="container" style="margin: 200px 0; text-align: center;">
               <div class="row">
-                <div class="col-sm-6 col-sm-offset-3"><a class="cartonbox btn-primary" href="#modalLetter" data-cb-design="modal-full" data-cb-type="inline">Модальное - подписаться на рассылку</a></div>
+                <div class="col-sm-6 col-sm-offset-3"><a class="cartonbox btn-primary" style="margin-bottom: 20px;" href="#modalLetter" data-cb-design="modal-full" data-cb-type="inline">Модальное - подписаться на рассылку</a><a class="cartonbox btn-primary" style="margin-bottom: 20px;" href="#modalEvents" data-cb-design="modal-full" data-cb-type="inline">Модальное - мероприятие (full)</a><a class="cartonbox btn-primary" href="#modalEventBox" data-cb-design="modal-boxed" data-cb-type="inline">Модальное - мероприятие (box)</a></div>
               </div>
             </div>
             <div style="display:none;">
               <div class="modal-box" id="modalLetter">
                 <div class="container container--narrow">
                   <div class="row modal-row">
-                    <div class="col-sm-6">
+                    <div class="col-sm-8 modal-holder">
                       <h2>Подпишитесь на рассылку!</h2>
-                      <p>Мы будем присылать по четвергам только полезные материалы, напоминания о тренингах и анонсы новых программ. Никакого спама!</p>
+                      <p>Мы будем присылать по четвергам только полезные материалы,<br> напоминания о тренингах и анонсы новых программ. Никакого спама!</p>
                       <form action="">
                         <div class="form-group">
                           <label>Имя</label>
@@ -184,9 +184,23 @@
                         </div>
                       </form>
                     </div>
-                    <div class="col-sm-6 modal-image">
+                    <div class="modal-image">
                       <!-- image--><img src="assets/img/modalImg_1.png">
                     </div>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-box" id="modalEvents">
+                <div class="container container--narrow">
+                  <div class="row modal-row">
+                    <div class="col-sm-12 modal-btn-holder"><a class="btn btn-danger" href="#">Принять участие </a><img class="img-responsive" src="assets/img/modalInfo_2.png"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-box" id="modalEventBox">
+                <div class="container container--narrow">
+                  <div class="row modal-row">
+                    <div class="col-sm-12 modal-btn-holder"><a class="btn btn-danger" href="#">Принять участие </a><img class="img-responsive" src="assets/img/modalInfo_3.png"></div>
                   </div>
                 </div>
               </div>
