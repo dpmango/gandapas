@@ -371,6 +371,9 @@
       display: none
 
 
+.mt20
+  margin-top: 20px
+
 .mt30
   margin-top: 30px
 
@@ -498,3 +501,74 @@
   p
     font-size: 13px
     +Ubuntu(light)
+
+
+.p-training-clients
+  margin-top: 50px
+
+.clients__list
+  &--mega
+    .clients__item
+      width: auto
+      flex: 0 1 50%
+      img
+        width: 80%
+
+  &--linear
+    flex-wrap: nowrap
+
+  &--narrow
+
+    .clients__item
+      width: auto
+      flex: 0 1 25%
+
+
+.p-training-reviews
+  position: relative
+  margin-top: 30px
+  max-width: 1000px
+  padding-bottom: 50px
+  color: white
+  &:after
+    position: absolute
+    bottom: 0
+    left: 0
+    right: 0
+    content: ""
+    display: block
+    width: 100%
+    height: 2px
+    background: url("../img/main/shopSeparator.png") no-repeat center
+    background-size: contain
+  .feedback__list
+    position: relative
+    padding-bottom: 30px
+    margin-bottom: 30px
+    &:after
+      position: absolute
+      bottom: 0
+      left: 0
+      right: 0
+      content: ""
+      display: block
+      width: 100%
+      height: 2px
+      background: url("../img/main/shopSeparator.png") no-repeat center
+      background-size: contain
+
+  .feedback__item h4
+    color: white
+  .feedback__form
+    max-width: 670px
+
+.p-training-events
+  margin-top: 30px
+  margin-bottom: 20px
+  color: white
+  .training__title
+    margin-bottom: 10px
+  .trainig__info
+    color: white
+    a
+      text-decoration: underline
