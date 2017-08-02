@@ -386,4 +386,36 @@ $(document).on('ready', function(){
     $('.cartonbox-close').hide();
   });
 
+  // toggler
+  var savedText
+  $('.js-showMore__toggler').on('click', function(){
+    $(this).prev().find('.js-showMore__hidden').slideToggle();
+    $(this).prev().toggleClass('active');
+    if ( $(this).text() == 'Подробнее' ) {
+      $(this).text('Скрыть')
+    } else {
+      (this).text('Подробнее')
+    }
+  });
+
+  // UI NUMBER
+  $('.ui-num-input span').on('click', function(e){
+    var element = $(this).parent().find('input');
+    var currentValue = parseInt($(this).parent().find('input').val()) || 0;
+
+    if( $(this).is('.ui-num-input-minus') ){
+      if(currentValue <= 1){
+        return false;
+      }else{
+        element.val( currentValue - 1 );
+      }
+    } else{
+      if(currentValue >= 10){
+        return false;
+      } else{
+        element.val( currentValue + 1 );
+      }
+    }
+  });
+
 });

@@ -1,100 +1,281 @@
-section.shop__page
+section.p-training
   .container
-    .blog__inner-topside
-      h2.ordered__title Мои заказ №3, создан 10.12.2016
-    .ordered__wrap.order__wrap.product__wrap
-      .table__wrap
-        .border__wrap
-          h4.tablet__title Заказ №3 от 10.12.2016, 3 товара на сумму 3 200р
-          table
-            tbody
-              tr
-                td Оплата: 10.12.2016
-                td Доставка:
-                  span Ожидает обработки
-                td
-                  a(href="#")
-                    i.fa.fa-info
-                    | Подробнее о заказе
-              tr
-                td Яндекс деньги
-                  .green Оплачено
-                td Служба доставки: Курьер
-                td
-                  a(href="#")
-                    i.fa.fa-refresh
-                    | Повторить заказ
-              tr
-                td Итого：
-                  span 3 200 р
-                td Стоимость доставки: 500р
-                td
-                  a(href="#")
-                    i.fa.fa-close
-                    | Отменить заказ
-      .table__wrap.table__order-cnt
-        h3.product__title.ordered__table-title Содержимое заказа
-        .border__wrap
-          table
+    .p-training__wrap
+      h2.h2-title Скрипты и алгоритмы успеха
+      .row
+        .col-sm-6
+          <iframe src="https://player.vimeo.com/video/145960465" width="100%" height="250" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+          .p-training__gal
+            .p-training__gal-item
+              a.gallery__link.cartonbox(href="assets/img/about/gallery-1.png" data-cb-type="img" data-cb-group="gallery")
+                img(src="assets/img/about/gallery-1.png")
+            .p-training__gal-item
+              a.gallery__link.cartonbox(href="assets/img/about/gallery-2.png" data-cb-type="img" data-cb-group="gallery")
+                img(src="assets/img/about/gallery-2.png")
+            .p-training__gal-item
+              a.gallery__link.cartonbox(href="assets/img/about/gallery-3.png" data-cb-type="img" data-cb-group="gallery")
+                img(src="assets/img/about/gallery-3.png")
+            .p-training__gal-item
+              a.gallery__link.cartonbox(href="assets/img/about/gallery-4.png" data-cb-type="img" data-cb-group="gallery")
+                img(src="assets/img/about/gallery-4.png")
+            .p-training__gal-item
+              a.gallery__link.cartonbox(href="assets/img/about/gallery-5.png" data-cb-type="img" data-cb-group="gallery")
+                img(src="assets/img/about/gallery-5.png")
+            .p-training__gal-item
+              a.gallery__link.cartonbox(href="assets/img/about/gallery-6.png" data-cb-type="img" data-cb-group="gallery")
+                img(src="assets/img/about/gallery-6.png")
+            .p-training__gal-item
+              a.gallery__link.cartonbox(href="assets/img/about/gallery-7.png" data-cb-type="img" data-cb-group="gallery")
+                img(src="assets/img/about/gallery-7.png")
+            .p-training__gal-item
+              a.gallery__link.cartonbox(href="assets/img/about/gallery-8.png" data-cb-type="img" data-cb-group="gallery")
+                img(src="assets/img/about/gallery-8.png")
+            .p-training__gal-item
+              a.gallery__link.cartonbox(href="assets/img/about/gallery-9.png" data-cb-type="img" data-cb-group="gallery")
+                img(src="assets/img/about/gallery-9.png")
+            a(href='#').p-training__gal-item.p-training__gal-item--more
+              span 
+                i +35 
+                | фото
+          // video
+          .p-training__gal
+            .p-training__gal-item
+              a.gallery__link.cartonbox(href="https://youtube.com/embed/yRuGhX791FQ?rel=0&showinfo=0&autoplay=1&wmode=transparent" data-cb-type="iframe" data-cb-group="video")
+                img(src="assets/img/about/video-1.png")
+            .p-training__gal-item
+              a.gallery__link.cartonbox(href="https://youtube.com/embed/yRuGhX791FQ?rel=0&showinfo=0&autoplay=1&wmode=transparent" data-cb-type="iframe" data-cb-group="video")
+                img(src="assets/img/about/video-2.png")
+            .p-training__gal-item
+              a.gallery__link.cartonbox(href="https://youtube.com/embed/yRuGhX791FQ?rel=0&showinfo=0&autoplay=1&wmode=transparent" data-cb-type="iframe" data-cb-group="video")
+                img(src="assets/img/about/video-3.png")
+            .p-training__gal-item
+              a.gallery__link.cartonbox(href="https://youtube.com/embed/yRuGhX791FQ?rel=0&showinfo=0&autoplay=1&wmode=transparent" data-cb-type="iframe" data-cb-group="video")
+                img(src="assets/img/about/video-4.png")
+            a(href='#').p-training__gal-item.p-training__gal-item--more
+              span 
+                i +2
+                | видео
+          
+          // ырфку
+          .p-training__share
+            script(type='text/javascript').
+              (function() {
+              if (window.pluso)if (typeof window.pluso.start == "function") return;
+              if (window.ifpluso==undefined) { window.ifpluso = 1;
+              var d = document, s = d.createElement('script'), g = 'getElementsByTagName';
+              s.type = 'text/javascript'; s.charset='UTF-8'; s.async = true;
+              s.src = ('https:' == window.location.protocol ? 'https' : 'http')  + '://share.pluso.ru/pluso-like.js';
+              var h=d[g]('body')[0];
+              h.appendChild(s);
+              }})();
+            span поделиться
+          
+            .pluso(data-background='transparent', data-options='medium,square,line,horizontal,nocounter,theme=01', data-services='vkontakte,odnoklassniki,moimir,facebook')
+
+
+        .col-sm-6
+          .p-training__short
+            p Ведущий: 
+              b Радислав Гандапас
+            .p-training__short-links
+              a(href='#').blue-link
+                i.ico.ico-pdf
+                span Скачать программу, .PDF (125 кБ)
+              a(href='#').blue-link
+                i.ico.ico-email
+                span Отправить программу на email
+          
+            h4 О тренинге
+            .js-showMore
+              p Изучение историй успеха людей разного масштаба показывает, что для его достижения есть свои сценарии и алгоритмы. Они сходны в разных сферах: в карьере и искусстве, в спорте и бизнесе.
+              p Успех — это не состояние, это процесс. Многие считают успех делом случая, путая его с удачей. Они постоянно ждут, когда случится волшебная встреча или удивительное событие, которое приведет их к успеху. Однако, изучение историй людей разного масштаба в карьере и искусстве, в спорте и бизнесе — показывает, что в достижении успеха есть свои сценарии и свои алгоритмы. Важно понимать, что успех — это не состояние, это процесс.
+              p На семинаре «Скрипты и алгоритмы успеха» Радислав раскроет проверенный и точный набор инструкций, описывающих последовательность действий, которые помогут вам обрести статус и деньги, а также высшие ценности: счастье, свободу и независимость!
+              .js-showMore__hidden
+                p Изучение историй успеха людей разного масштаба показывает, что для его достижения есть свои сценарии и алгоритмы. Они сходны в разных сферах: в карьере и искусстве, в спорте и бизнесе.
+                p Успех — это не состояние, это процесс. Многие считают успех делом случая, путая его с удачей. Они постоянно ждут, когда случится волшебная встреча или удивительное событие, которое приведет их к успеху. Однако, изучение историй людей разного масштаба в карьере и искусстве, в спорте и бизнесе — показывает, что в достижении успеха есть свои сценарии и свои алгоритмы. Важно понимать, что успех — это не состояние, это процесс.
+                p На семинаре «Скрипты и алгоритмы успеха» Радислав раскроет проверенный и точный набор инструкций, описывающих последовательность действий, которые помогут вам обрести статус и деньги, а также высшие ценности: счастье, свободу и независимость!
+            a(href='#').js-showMore__toggler.link-dotted Подробнее
+
+section.p-training-sep
+  .container
+    .row
+      h3 Организаторам
+      p Организаторам Если вы хотите организовать это мероприятие в своем городе или заказать его в корпоративном формате, пожалуйста, пишите на почту <a href='mailto:training@radislavgandapas.com'>training@radislavgandapas.com</a> или звоните +7 (495) 180-04-14
+
+section.p-training
+  .container
+    .p-training__wrap
+      h2.h2-title Тренинг «Скрипты и алгоритмы успеха» в Москве
+      
+      .row
+        .col-sm-4
+          a(href='#').training__card
+            .training__card-top
+              span 19.01.2017 /
+                span Москва
+            .training__card-name Скрипты и алгоритмы успеха
+          a(href='#').training__card
+            .training__card-top
+              span 19.01.2017 /
+                span Москва
+            .training__card-name Скрипты и алгоритмы успеха VIP день
+          
+        .col-sm-7.col-sm-offset-1
+          h3 Место проведения: 
+          p Новинский бульвар,8, «Лотте Плаза»
+            a(href='#').blue-link
+              span показать на карте
+          
+          h3.mt30 Расписание
+          .row
+            .col-sm-6
+              p День 1
+              p 09:00 Начало регистрации    
+              p 10:00 Начало тренинга  
+              p 11:30 - 11:45 Кофе брейк  
+              p 13:30 - 14:30 Обед  
+            .col-sm-6
+              p День 1
+              p 09:00 Начало регистрации    
+              p 10:00 Начало тренинга  
+              p 11:30 - 11:45 Кофе брейк  
+              p 13:30 - 14:30 Обед  
+      
+      /// BOOKING AND CTA
+      .p-training-booking
+        h2.ht-title Броинрование мест
+        form(action='#')
+          table.table-responsive.table
             thead
               tr
-                td Товар
-                td Количество
-                td Сумма
+                td Категория билета
+                td Цена
+                td Участники
             tbody
-              tr.with__pic
-                td
-                  img(src="assets/img/pic.jpg")
-                  .text
-                    h4 К выступлению готов!
-                    .version 
-                      span Электронная версия
-                      a(href='#') FB2, 
-                      a(href='#') EPUB, 
-                      a(href='#') iOS, 
-                      a(href='#') PDF
-                td 1 шт.
+              tr
                 td 
-                  .table__order-cnt-price
-                    span 300 р
-                    .table__order-cnt-price-btn
-                      a.form__btn.save(href="#") Скачать (1.2Mb)
-              
-              tr.with__pic
-                td
-                  img(src="assets/img/pic.jpg")
-                  .text
-                    h4 К выступлению готов!
-                    .version 
-                      span Электронная версия
-                      a(href='#') FB2, 
-                      a(href='#') EPUB, 
-                      a(href='#') iOS, 
-                      a(href='#') PDF
-                td 1 шт.
+                  .p-training-booking__name Platinum
+                  span осталось мест: 64
                 td 
-                  .table__order-cnt-price
-                    span 300 р
-                    .table__order-cnt-price-btn
-                      a.form__btn.save(href="#") Скачать (1.2Mb)
-                      a.form__btn.save(href="#") Слушать онлайн
-              
-              tr.with__pic
+                  .p-training-booking__price 100 000 Р.
+                  span с 21.01.2017 - 125 000 Р.
                 td
-                  img(src="assets/img/pic.jpg")
-                  .text
-                    h4 К выступлению готов!
-                    .version 
-                      span Электронная версия
-                      a(href='#') FB2, 
-                      a(href='#') EPUB, 
-                      a(href='#') iOS, 
-                      a(href='#') PDF
-                td 1 шт.
+                  .ui-num-input
+                    span.ui-num-input-minus -
+                    input(type='text' value='0')
+                    span.ui-num-input-plus +
+          
+              tr
+                td 
+                  .p-training-booking__name VIP
+                  span осталось мест: 64
+                td 
+                  .p-training-booking__price 30 000 Р.
+                  span с 21.01.2017 - 125 000 Р.
                 td
-                  .table__order-cnt-price
-                    span 300 р
-                    .table__order-cnt-price-btn.table__order-cnt-price-btn--status
-                      span Доставка: Курьер
-                      span Ожидает обработки
-                  
+                  .ui-num-input
+                    span.ui-num-input-minus -
+                    input(type='text' value='2')
+                    span.ui-num-input-plus +
+              tr
+                td 
+                  .p-training-booking__name Business
+                  span осталось мест: 64
+                td 
+                  .p-training-booking__price 30 000 Р.
+                  span с 21.01.2017 - 125 000 Р.
+                td
+                  .ui-num-input
+                    span.ui-num-input-minus -
+                    input(type='text' value='2')
+                    span.ui-num-input-plus +
+                    
+                    
+              tr
+                td 
+                  .p-training-booking__name Standart
+                  span осталось мест: 64
+                td 
+                  .p-training-booking__price 50 000 Р.
+                  span с 21.01.2017 - 125 000 Р.
+                td
+                  .ui-num-input
+                    span.ui-num-input-minus -
+                    input(type='text' value='2')
+                    span.ui-num-input-plus +
+              tr
+                td 
+                  .p-training-booking__name Category
+                  span осталось мест: 64
+                td 
+                  .p-training-booking__price 50 000 Р.
+                  span с 21.01.2017 - 125 000 Р.
+                td
+                  .ui-num-input
+                    span.ui-num-input-minus -
+                    input(type='text' value='2')
+                    span.ui-num-input-plus +
+            
+              tr
+                td 
+                  .p-training-booking__name Category
+                  span осталось мест: 64
+                td 
+                  .p-training-booking__price 50 000 Р.
+                  span с 21.01.2017 - 125 000 Р.
+                td
+                  .ui-num-input
+                    span.ui-num-input-minus -
+                    input(type='text' value='2')
+                    span.ui-num-input-plus +            
+          
+              tr
+                td Итого
+                td 70 000
+                td 2
+                
+          .row.p-training-booking-cta
+            .col-sm-4
+              a(href='#').btn.btn-primary Перейти к оформлению
+            .col-sm-5
+              p При покупке от 5 билетов — скидка 5%. <br> При покупке от 10 билетов — скидка 10%.
+
+          .row.p-training-bottom
+            .col-sm-4
+              p По вопросу заключения договоров, получения закрывающих документов и оплаты наличными обращайтесь по телефону: +7 (495) 180-04-14.
+            .col-sm-4
+              p Возврат денег или перенос участия возможны в случае отказа от участия в тренинге не менее чем за одну неделю.
+
+      // CLIENTS
+      .p-training-clients
+        ul.clients__list
+          li.clients__item
+            img.clients__img(src="assets/img/about/client-1.png")
+          li.clients__item
+            img.clients__img(src="assets/img/about/client-2.png")
+          li.clients__item
+            img.clients__img(src="assets/img/about/client-3.png")
+          li.clients__item
+            img.clients__img(src="assets/img/about/client-4.png")
+          li.clients__item
+            img.clients__img(src="assets/img/about/client-5.png")
+          li.clients__item
+            img.clients__img(src="assets/img/about/client-6.png")
+          li.clients__item
+            img.clients__img(src="assets/img/about/client-9.png")
+          li.clients__item
+            img.clients__img(src="assets/img/about/client-10.png")
+          li.clients__item
+            img.clients__img(src="assets/img/about/client-11.png")
+          li.clients__item
+            img.clients__img(src="assets/img/about/client-12.png")
+          li.clients__item
+            img.clients__img(src="assets/img/about/client-15.png")
+          li.clients__item
+            img.clients__img(src="assets/img/about/client-16.png")
+          li.clients__item
+            img.clients__img(src="assets/img/about/client-17.png")
+          li.clients__item
+            img.clients__img(src="assets/img/about/client-18.png")
+          li.clients__item
+            img.clients__img(src="assets/img/about/client-19.png")

@@ -249,3 +249,252 @@
   margin-bottom: 50px
   span
     text-decoration: underline
+
+
+// TRAININGS
+.p-training
+  margin-top: 30px
+  .container
+    padding-bottom: 0
+  &__wrap
+    background: white
+    padding: 35px 35px 35px
+    border-radius: 25px 25px 25px 0
+    color: $black
+    h2
+      font-size: 2.3rem
+      color: $black
+  iframe
+    max-width: 100%
+  p
+    font-size: 15px
+  &__gal
+    display: inline-block
+    display: flex
+    flex-wrap: wrap
+    margin-left: -3px
+    margin-right: -3px
+    &-item
+      position: relative
+      flex: 0 1 calc(20% - 6px)
+      margin: 3px
+      overflow: hidden
+      height: 80px
+      &::after
+        position: absolute
+        z-index: 2
+      img
+        min-width: 100%
+        min-height: 100%
+        width: auto
+        height: auto
+        position: absolute
+        z-index: 1
+        left: 50%
+        top: 50%
+        transform: translate(-50%, -50%)
+      &--more
+        background: #4f7094
+        padding: 15px
+        color: white
+        font-size: 20px
+        +Ubuntu(medium)
+        line-height: 1
+        transition: all $transitionSpeed $ease
+        span
+          margin-top: auto
+          margin-bottom: auto
+        i
+          display: block
+          font-style: normal
+          font-size: 30px
+        &:hover
+          background: $orange
+          color: white
+  &__share
+    margin-top: 10px
+    display: flex
+    align-items: center
+    span
+      display: inline-block
+      font-size: 15px
+      margin-right: 5px
+  &__short
+    a
+      color: #0084ff
+      margin-bottom: 5px
+      .ico
+        margin-right: 5px
+      span
+        display: inline-block
+        border-bottom: 1px solid transparent
+        color: #0084ff
+    h4
+      color: $black
+      margin-top: 30px
+    &-links
+      a
+        display: block
+
+.p-training-sep
+  color: white
+  padding: 20px 20px 0 20px
+  margin-left: -5px
+  margin-right: -5px
+  .container
+    padding-bottom: 0
+  h3
+    text-transform: uppercase
+    color: white
+  p
+    color: white
+    font-size: 15px
+  a
+    text-decoration: underline
+
+
+.js-showMore
+  position: relative
+  &::before
+    position: absolute
+    display: inline-block
+    content: ' '
+    bottom: 0
+    left: 0
+    right: 0
+    height: 60px
+    background: linear-gradient(to bottom, rgba(white, 0), rgba(white,.8))
+  &__hidden
+    display: none
+  &.active
+    &::before
+      display: none
+
+
+.mt30
+  margin-top: 30px
+
+.training__card
+  display: block
+  background: #f2f2f2
+  padding: 15px 30px 15px 10px
+  min-height: 90px
+  border-radius: 10px
+  margin-bottom: 15px
+  transition: all $transitionSpeed $ease
+  &:hover
+    background: #f8f8f8
+  &-top
+    color: $black
+    +Ubuntu(bold)
+    font-size: 15px
+    span
+      +Ubuntu(medium)
+  &-name
+    +Ubuntu(light)
+    font-size: 15px
+    margin-top: 10px
+    color: $blue
+    text-decoration: underline
+
+
+.p-training-booking
+  background: #f2f2f2
+  border-radius: 25px 25px 0px 0
+  margin-left: -25px
+  margin-right: -25px
+  padding: 30px 25px
+  margin-top: 30px
+  table
+    width: 100%
+    max-width: 700px
+    border-collapse: separate
+    border-spacing: 0px 10px
+    margin-bottom: 30px
+  td, tr
+    border: 0 !important
+    vertical-align: middle
+  thead
+    font-size: 25px
+    +Ubuntu(bold)
+  tbody
+    tr
+      margin-top: 10px
+      font-size: 15px
+      border-radius: 6px
+      background: white
+      border: 1px solid transparent
+      &:hover
+        border-color: $orange
+      &:last-child
+        font-size: 25px
+        +Ubuntu(bold)
+        background: transparent
+        border: 0
+        td:last-child
+          text-align: center
+    td
+      padding: 5px 15px
+      &:last-child
+        width: 140px
+
+  &__name
+    font-size: 25px
+    margin-bottom: 5px
+    color: #0084ff
+  &__price
+    font-size: 25px
+    margin-bottom: 5px
+
+  &-cta
+
+
+.ui-num-input
+  width: 135px
+  margin-top: 10px
+  position: relative
+  background: white
+  border: 1px solid black
+  border-radius: 6px
+  height: 35px
+
+  &-minus, &-plus
+    position: absolute
+    z-index: 3
+    padding: 5px 10px
+    line-height: 1
+    top: 50%
+    transform: translateY(-50%)
+    color: #0084ff
+    font-size: 25px
+    cursor: pointer
+    transition: all $transitionSpeed $ease
+    &:hover
+      color: $orange
+
+  input
+    width: 100%
+    background: transparent
+    border: 0
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    text-align: center
+    padding: 5px 40px
+    font-size: 25px
+    &:focus
+      border: 0
+      outline: none
+  &-minus
+    left: 2px
+  &-plus
+    right: 2px
+
+
+.p-training-bottom
+  margin-top: 20px
+  p
+    font-size: 13px
+    +Ubuntu(light)
